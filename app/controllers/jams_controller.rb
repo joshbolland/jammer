@@ -5,6 +5,7 @@ class JamsController < ApplicationController
 
   def show
     @jam = Jam.find(params[:id])
+    # @jam.user = current_user
   end
 
   def new
