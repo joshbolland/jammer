@@ -1,0 +1,14 @@
+generic_user00:
+  email: 'gen00@demo.com'
+  password: 'password'
+  first_name: 'Die'
+  last_name: 'Anna'
+  bio: 'The profile for Die Anna'
+  remote_photo_url: 'https://d3iw72m71ie81c.cloudfront.net/female-22.jpg'
+generic_user01:
+  email: 'gen01@demo.com'
+  password: 'password'
+  first_name: 'Max'
+  last_name: 'Damage'
+  bio: 'The profile for Max Damage'
+  remote_photo_url: 'https://pbs.twimg.com/profile_images/999738241942212609/QrZO-QjT.jpg'
