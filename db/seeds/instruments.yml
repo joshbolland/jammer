@@ -1,10 +1,10 @@
-guitar:
+instrument00:
   name: "Lead Guitar"
-bass:
+instrument01:
   name: "Bass Guitar"
-drums:
+instrument02:
   name: "Drums"
-vocals:
+instrument03:
   name: "Vocals"
-keys:
+instrument04:
   name: "Keys"
