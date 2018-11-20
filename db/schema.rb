@@ -10,10 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_143855) do
+ActiveRecord::Schema.define(version: 2018_11_20_112402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jams", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.time "time"
+    t.string "location"
+    t.float "lat"
+    t.float "lng"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_jams_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "slot_id"
+    t.string "status"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slot_id"], name: "index_requests_on_slot_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "jam_id"
+    t.bigint "instrument_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_slots_on_instrument_id"
+    t.index ["jam_id"], name: "index_slots_on_jam_id"
+    t.index ["user_id"], name: "index_slots_on_user_id"
+  end
+
+  create_table "user_instruments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "instrument_id"
+    t.string "ability"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_user_instruments_on_instrument_id"
+    t.index ["user_id"], name: "index_user_instruments_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +75,20 @@ ActiveRecord::Schema.define(version: 2018_11_19_143855) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.text "bio"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "jams", "users"
+  add_foreign_key "requests", "slots"
+  add_foreign_key "requests", "users"
+  add_foreign_key "slots", "instruments"
+  add_foreign_key "slots", "jams"
+  add_foreign_key "slots", "users"
+  add_foreign_key "user_instruments", "instruments"
+  add_foreign_key "user_instruments", "users"
 end
