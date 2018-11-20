@@ -3,4 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :jams
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, only: [:index, :show]
+  resources :user_instrument, only: [:create]
+  resources :jams do
+    resources :slots, only: [:create] do
+      resources :requests, only: [:create]
+    end
+  end
+
 end
