@@ -1,0 +1,10 @@
+guitar:
+  name: "Lead Guitar"
+bass:
+  name: "Bass Guitar"
+drums:
+  name: "Drums"
+vocals:
+  name: "Vocals"
+keys:
+  name: "Keys"

@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :requests
   has_many :slots
   has_many :jams
+  mount_uploader :photo, PhotoUploader
 end

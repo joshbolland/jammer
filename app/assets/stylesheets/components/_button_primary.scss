@@ -1,0 +1,48 @@
+.button_primary {
+background-color: #7F51FF;
+width: 150px;
+height: 50px;
+border-radius: 5px;
+font-family: raleway;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: white;
+
+}
+
+.button_primary:hover {
+  color: white;
+  background-color: #4B2F99;
+  box-shadow: 0 1px 1px -2px rgb(226, 226, 226);
+
+}
+
+.button_primary span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+
+.button_primary span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button_primary:hover span {
+  padding-right: 25px;
+}
+
+.button_primary:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
