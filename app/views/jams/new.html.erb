@@ -1,2 +1,38 @@
-<h1>Jams#new</h1>
-<p>Find me in app/views/jams/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-3">
+      <div class="new-jam-form">
+        <h1><center>Create new JAM</center></h1>
+        <%= simple_form_for @jam do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+          <div class="form-inputs">
+            <%= f.input :title %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :location %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :date  %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :time %>
+          </div>
+
+          <div class="form-inputs">
+            <%= f.input :description %>
+          </div>
+
+          <div class="form-actions">
+            <center><%= f.submit "Add jam", class: "button" %></center>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

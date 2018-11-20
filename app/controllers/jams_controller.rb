@@ -13,6 +13,7 @@ class JamsController < ApplicationController
 
   def create
     @jam = Jam.new(jam_params)
+    @jam.user = current_user
     if @jam.save
       redirect_to jams_path
     else
