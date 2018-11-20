@@ -1,2 +1,14 @@
-<h1>Jams#show</h1>
-<p>Find me in app/views/jams/show.html.erb</p>
+<h3> <%= @jam.title %> </h3>
+<br>
+<h4>Details about this jam:</h4>
+<p> Where: <%= @jam.location %> </p>
+<p> When? <%= @jam.date %> |
+Time: <%= @jam.time %> </p>
+<h4> Description:</h4>
+<p> <%= @jam.description %> </p>
+<br>
+<h3>Jammers</h3>
+<p> slot#1 </p>
+<p> slot#2.... </p>
+
+<%= link_to "Back to jams", jams_path %>
