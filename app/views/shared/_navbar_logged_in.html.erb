@@ -1,0 +1,51 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to image_tag("logo.png", class: "navbar-wagon-brand"), root_path %>
+
+
+
+<div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="svg-wrapper_logged_in">
+      <%= link_to users_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape_logged_in" height="40" width="150"/>
+          <div id="text">
+            <span class="spot"></span>Profile
+          </div>
+        </svg>
+      <% end %>
+    </div>
+
+  <div class="svg-wrapper_logged_in">
+      <%= link_to jams_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape_logged_in" height="40" width="150"/>
+          <div id="text">
+            <span class="spot"></span>Jams
+          </div>
+        </svg>
+      <% end %>
+    </div>
+
+    <div class="svg-wrapper_logged_in">
+      <%= link_to user_instrument_index_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape_logged_in" height="40" width="150"/>
+          <div id="text">
+            <span class="spot"></span>Search
+          </div>
+        </svg>
+      <% end %>
+    </div>
+    <div class="svg-wrapper_logged_in">
+      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+          <rect id="shape_logged_in" height="40" width="150" />
+          <div id="text">
+            <span class="spot"></span>Sign out
+          </div>
+        </svg>
+      <% end %>
+    </div>
+  </div>
+</div>

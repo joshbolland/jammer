@@ -1,0 +1,43 @@
+
+.spot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.svg-wrapper_logged_in {
+  margin-top: 0;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-left: 5px;
+  margin-right: 5px
+}
+
+#shape_logged_in {
+  stroke-width: 6px;
+  fill: transparent;
+  stroke: $jammer-blue;
+  stroke-dasharray: 85 400;
+  stroke-dashoffset: -220;
+  transition: 1s all ease;
+}
+
+#text {
+  margin-top: -40px;
+  margin-left: 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.svg-wrapper_logged_in:hover #shape_logged_in {
+  stroke-dasharray: 50 0;
+  stroke-width: 5px;
+  stroke-dashoffset: 0;
+  stroke: $jammer-purple;
+  }
+
