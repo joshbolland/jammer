@@ -1,20 +1,26 @@
-<h3> <%= @jam.title %> </h3>
-<br>
-<h4>Details about this jam:</h4>
-<p> Where: <%= @jam.location %> </p>
-<p> When? <%= @jam.date %> |
-Time: <%= @jam.time %> </p>
-<h4> Description:</h4>
-<p> <%= @jam.description %> </p>
-<br>
-<h3>Jammers</h3>
-
-<!-- temporary for request implementation -->
-<% @jam.slots.each do |slot| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="profilecard">
+        <h3> <%= @jam.title %> </h3>
+        <%= cl_image_tag @jam.photo,  width: 400, height: 200, crop: :fill, class: "jam-avatar" %>
+        <h4>Details about this jam:</h4>
+        <p> Where: <%= @jam.location %> </p>
+        <p> When: <%= @jam.date %> |
+          Time: <%= @jam.time %> </p>
+          <h4> Description:</h4>
+          <p> <%= @jam.description %> </p>
+          <h3>Jammers</h3>
+          <% @jam.slots.each do |slot| %>
   <p><%= slot.instrument.name %></p>
   <p><%= link_to "request this slot", new_slot_request_path(slot) %></p>
 
 <% end %>
 
-<%= link_to "Add a slot to this jam", new_jam_slot_path(@jam) %>
-<%= link_to "Back to jams", jams_path %>
+          <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" %>
+          <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
+          <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
+        </div>
+    </div>
+  </div>
+</div>

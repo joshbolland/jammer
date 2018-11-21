@@ -1,58 +1,81 @@
-<div class="navbar-wagon">
+<% if params[:action] == "home" %>
+  <div class="navbar-wagon">
+    <%= link_to image_tag("logowhite.svg", class: "navbar-wagon-brand"), root_path %>
+<% else %>
+  <div class="navbar-wagon white-background">
+  <%= link_to image_tag("logo.svg", class: "navbar-wagon-brand"), root_path %>
+<% end %>
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
+  <% if user_signed_in? %>
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <div class="svg-wrapper_logged_in">
+          <%= link_to user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" do %>
+            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape_logged_in" height="40" width="90"/>
+              <div id="text">
+                <span class="spot"></span>Profile
+              </div>
+            </svg>
+          <% end %>
         </div>
+
+      <div class="svg-wrapper_logged_in">
+          <%= link_to jams_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape_logged_in" height="40" width="90"/>
+              <div id="text">
+                <span class="spot"></span>Jams
+              </div>
+            </svg>
+          <% end %>
+        </div>
+
+        <div class="svg-wrapper_logged_in">
+          <%= link_to users_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape_logged_in" height="40" width="90"/>
+              <div id="text">
+                <span class="spot"></span>Search
+              </div>
+            </svg>
+          <% end %>
+        </div>
+        <div class="svg-wrapper_logged_in">
+          <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" do %>
+            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+              <rect id="shape_logged_in" height="40" width="90" />
+              <div id="text">
+                <span class="spot"></span>Sign out
+              </div>
+            </svg>
+          <% end %>
+        </div>
+          <%= link_to user_path(current_user) do %>
+          <%= cl_image_tag current_user.photo, class: "profilepic" %>
+        <% end %>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
+  <% else %>
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <div class="svg-wrapper">
+        <%= link_to new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150"/>
+            <div id="text_logged_out">
+              <span class="spot"></span>Sign in
+            </div>
+          </svg>
+        <% end %>
+      </div>
+      <div class="svg-wrapper">
+        <%= link_to new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="150" />
+            <div id="text_logged_out">
+              <span class="spot"></span>Sign up
+            </div>
+          </svg>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
-
