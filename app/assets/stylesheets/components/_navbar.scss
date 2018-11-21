@@ -40,12 +40,12 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: $jammer-grey;
   font-size: 18px;
   font-family: raleway;
 }
 .navbar-wagon-link:hover {
-  color: #303030;
+  color: $jammer-black;
   text-decoration: none;
   font-family: raleway;
 }
@@ -53,13 +53,13 @@
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px $jammer-white;
+  border-color: $jammer-white;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $jammer-dark-grey !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -77,6 +77,6 @@
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid $jammer-white;
+  border-top: 1px solid $jammer-white;
 }
