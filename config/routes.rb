@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :user_instrument, only: [:create]
   resources :jams do
-    resources :slots, only: [:create] do
+    resources :slots, only: [:new, :create] do
       resources :requests, only: [:create]
     end
   end
