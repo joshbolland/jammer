@@ -8,8 +8,13 @@ Time: <%= @jam.time %> </p>
 <p> <%= @jam.description %> </p>
 <br>
 <h3>Jammers</h3>
-<p> slot#1 </p>
-<p> slot#2.... </p>
+
+<!-- temporary for request implementation -->
+<% @jam.slots.each do |slot| %>
+  <p><%= slot.instrument.name %></p>
+  <p><%= link_to "request this slot", new_slot_request_path(slot) %></p>
+
+<% end %>
 
 <%= link_to "Add a slot to this jam", new_jam_slot_path(@jam) %>
 <%= link_to "Back to jams", jams_path %>
