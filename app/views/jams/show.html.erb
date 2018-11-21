@@ -11,4 +11,5 @@ Time: <%= @jam.time %> </p>
 <p> slot#1 </p>
 <p> slot#2.... </p>
 
+<%= link_to "Add a slot to this jam", new_jam_slot_path(@jam) %>
 <%= link_to "Back to jams", jams_path %>
