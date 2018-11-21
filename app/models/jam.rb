@@ -5,4 +5,5 @@ class Jam < ApplicationRecord
   validates :description, presence: true
   validates :date, presence: true
   validates :location, presence: true
+  mount_uploader :photo, PhotoUploader
 end
