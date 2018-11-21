@@ -6,8 +6,7 @@
         <%= cl_image_tag @jam.photo,  width: 400, height: 200, crop: :fill, class: "jam-avatar" %>
         <h4>Details about this jam:</h4>
         <p> Where: <%= @jam.location %> </p>
-        <p> When: <%= @jam.date %> |
-          Time: <%= @jam.time %> </p>
+        <p> Date: <%= @jam.date.strftime(' %a, %b %e, %Y') %> | Time: <%= @jam.time.strftime('%-I%p') %> </p>
           <h4> Description:</h4>
           <p> <%= @jam.description %> </p>
           <h3>Jammers</h3>
