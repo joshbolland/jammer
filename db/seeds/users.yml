@@ -1,35 +1,78 @@
+demo_user:
+  email: "demo@demo.com"
+  password: "password"
+  first_name: "Demolition"
+  last_name: "Cat"
+  bio: "Cannot think of a better profile at the moment"
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-22.jpg"
 generic_user00:
-  email: 'gen00@demo.com'
-  password: 'password'
-  first_name: 'Die'
-  last_name: 'Anna'
-  bio: 'The profile for Die Anna'
-  remote_photo_url: 'https://d3iw72m71ie81c.cloudfront.net/female-22.jpg'
+  email: "gen00@demo.com"
+  password: "password"
+  first_name: "Die"
+  last_name: "Anna"
+  bio: "Internet advocate. Certified travel scholar. Friendly student. Pop culture fan."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-22.jpg"
 generic_user01:
-  email: 'gen01@demo.com'
-  password: 'password'
-  first_name: 'Max'
-  last_name: 'Damage'
-  bio: 'The profile for Max Damage'
-  remote_photo_url: 'https://pbs.twimg.com/profile_images/999738241942212609/QrZO-QjT.jpg'
+  email: "gen01@demo.com"
+  password: "password"
+  first_name: "Max"
+  last_name: "Damage"
+  bio: "Pop culture maven. Analyst. Writer. Wannabe food evangelist. Organizer. Friendly internet lover. Incurable troublemaker. Entrepreneur."
+  remote_photo_url: "https://pbs.twimg.com/profile_images/999738241942212609/QrZO-QjT.jpg"
 generic_user02:
-  email: 'gen02@demo.com'
-  password: 'password'
-  first_name: 'Guy'
-  last_name: 'Coe'
-  bio: 'The profile for Guy Coe'
-  remote_photo_url: 'https://d3iw72m71ie81c.cloudfront.net/male-25.jpg'
+  email: "gen02@demo.com"
+  password: "password"
+  first_name: "Winnie"
+  last_name: "Bago"
+  bio: "Hipster-friendly zombie geek. Alcoholic. Music enthusiast. Lifelong writer. Devoted tv scholar."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-8.jpg"
 generic_user03:
-  email: 'gen03@demo.com'
-  password: 'password'
-  first_name: 'Marvel'
-  last_name: 'Uss'
-  bio: 'The profile for Marvel Uss'
-  remote_photo_url: 'https://d3iw72m71ie81c.cloudfront.net/marvell.png'
+  email: "gen03@demo.com"
+  password: "password"
+  first_name: "Dr."
+  last_name: "Phe"
+  bio: "I'm representing for them gangstas all across the world Still hitting them corners in them lo-lo's, girl (Still taking my time to perfect the beat And I still got love for the streets, it's the D-R-E)"
+  remote_photo_url: "https://avatars3.githubusercontent.com/u/20525002?s=460&v=4"
 generic_user04:
-  email: 'gen04@demo.com'
-  password: 'password'
-  first_name: 'Dr.'
-  last_name: 'Phe'
-  bio: 'The profile for Dr Phe'
-  remote_photo_url: 'https://avatars3.githubusercontent.com/u/20525002?s=460&v=4'
+  email: "gen04@demo.com"
+  password: "password"
+  first_name: "Di"
+  last_name: "O' Bolic"
+  bio: "General beer trailblazer. Award-winning bacon scholar. Internet buff. Alcohol fan. Typical tv junkie. Twitter nerd."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-73.jpg"
+generic_user05:
+  email: "gen05@demo.com"
+  password: "password"
+  first_name: "Cam"
+  last_name: "Payne"
+  bio: "Certified music lover. Typical creator. Lifelong pop culture guru. Social media ninja."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-41.jpg"
+generic_user06:
+  email: "gen06@demo.com"
+  password: "password"
+  first_name: "Mabel"
+  last_name: "Syrup"
+  bio: "Lifelong explorer. Tv guru. Hipster-friendly coffee advocate. Infuriatingly humble food fan."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-69.jpg"
+generic_user07:
+  email: "gen07@demo.com"
+  password: "password"
+  first_name: "Jim"
+  last_name: "Nasium"
+  bio: "Creator. Amateur travel nerd. Professional internet ninja. Lifelong twitter fanatic. Problem solver."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/marvell.png"
+generic_user08:
+  email: "gen08@demo.com"
+  password: "password"
+  first_name: "Marsha"
+  last_name: "Mellow"
+  bio: "Professional travelaholic. Writer. Amateur analyst. Zombie advocate. Unapologetic music fanatic."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-65.jpg"
+generic_user09:
+  email: "gen09@demo.com"
+  password: "password"
+  first_name: "Lou"
+  last_name: "Pole"
+  bio: "Award-winning tv expert. Beer enthusiast. Proud bacon ninja. Travel aficionado. Zombie advocate."
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-33.jpg"
+

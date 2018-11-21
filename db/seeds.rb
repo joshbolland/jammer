@@ -8,12 +8,24 @@
 
 # Clean out the DB
 def wipe_db
+  puts "Wiping requests..."
+  Request.destroy_all
+  puts "... it's done."
+  puts "Wiping slots..."
+  Slot.destroy_all
+  puts "... it's done."
+  puts "Wiping jams..."
+  Jam.destroy_all
+  puts "... it's done."
+  puts "Wiping UserInstruments..."
+  UserInstrument.destroy_all
+  puts "... it's done."
   puts "Wiping instruments..."
   Instrument.destroy_all
-  puts "DONE!"
+  puts "... it's done."
   puts "Wiping users..."
   User.destroy_all
-  puts "DONE!"
+  puts "... it's done."
 end
 
 # iterate over instruments YAML
@@ -58,11 +70,69 @@ end
 
 # Seed one user
 def create_a_seed_user(attributes)
-  User.create!(attributes)
-  puts "Created #{User.last.first_name}."
+  user = User.new(attributes)
+  user.save!
+  puts "Created #{user.first_name}."
+end
+
+# Assign instruments to users
+def assign_instruments
+  puts "Assigning instruments..."
+  users = User.all
+
+  puts "Assigning lead guitar players."
+  users[0..4].each do |user|
+    @user_instrument = UserInstrument.new
+    @user_instrument.user = user
+    @user_instrument.instrument = Instrument.first
+    @user_instrument.ability = (rand(5) + 1).to_s
+    @user_instrument.save
+    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
+  end
+
+  puts "Assigning bassists."
+  users[3..6].each do |user|
+    @user_instrument = UserInstrument.new
+    @user_instrument.user = user
+    @user_instrument.instrument = Instrument.second
+    @user_instrument.ability = (rand(5) + 1).to_s
+    @user_instrument.save
+    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
+  end
+
+  puts "Assigning drummers."
+  users[7..9].each do |user|
+    @user_instrument = UserInstrument.new
+    @user_instrument.user = user
+    @user_instrument.instrument = Instrument.third
+    @user_instrument.ability = (rand(5) + 1).to_s
+    @user_instrument.save
+    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
+  end
+
+  puts "Assigning vocalists."
+  users[2..5].each do |user|
+    @user_instrument = UserInstrument.new
+    @user_instrument.user = user
+    @user_instrument.instrument = Instrument.fourth
+    @user_instrument.ability = (rand(5) + 1).to_s
+    @user_instrument.save
+    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
+  end
+
+  puts "Assigning keys."
+  users[8..9].each do |user|
+    @user_instrument = UserInstrument.new
+    @user_instrument.user = user
+    @user_instrument.instrument = Instrument.fifth
+    @user_instrument.ability = (rand(5) + 1).to_s
+    @user_instrument.save
+    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
+  end
 end
 
 # Begin Seeding
 wipe_db
 db_seed_instruments
 db_seed_users
+assign_instruments
