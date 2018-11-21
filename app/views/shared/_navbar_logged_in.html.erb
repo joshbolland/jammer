@@ -47,5 +47,9 @@
         </svg>
       <% end %>
     </div>
+      <%= link_to user_path(current_user) do %>
+      <%= cl_image_tag current_user.photo, class: "profilepic" %>
+    <% end %>
+
   </div>
 </div>
