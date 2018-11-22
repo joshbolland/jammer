@@ -1,0 +1,70 @@
+.search-bar {
+  text-align: center;
+  margin: 15px 150px 15px 190px;
+}
+.content {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.cards-container {
+  display: flex;
+  width: 700px;
+}
+#map {
+  flex: 1 0 50%;
+  height: 550px;
+  position: sticky !important;
+  top: 40px;
+  margin-right: 30px;
+  margin-top: 40px;
+  border: 15px solid white;
+  border-radius: 4px;
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+.title {
+  margin-left: 25px;
+}
+.fa-map-marker-alt {
+  font-size: 14px;
+}
+.result-card {
+  height: 225px;
+  width: 600px;
+  background-color: white;
+  color: #484848;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+}
+.result-image {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+}
+.result-img {
+  box-shadow: 1px 1px 1px 1px rgba(36, 32, 56, 0.1);
+  border-radius: 2px;
+}
+.result-description {
+  position: absolute;
+  top: 10px;
+  left: 240px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+.result-description h3 {
+  font-size: 20px;
+}
+.result-button {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+.search-button {
+  margin-left: -70px;
+  padding-top: 3px;
+}
