@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-4-offset-1">
+        <div class="home-search">
+          <h1>Jammer</h1>
+          <h3>Connecting Musicians</h3>
+          <h4>Find your future bandmates</h4>
+          <%= form_tag users_path, class: "form", method: :get do %>
+          <p>WHERE</p>
+          <%= text_field_tag :location, params[:location], class: "input", id: "musician_location" %><br>
+          <%= submit_tag ("Search"), class: "button_primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
