@@ -1,6 +1,11 @@
+.flexbox {
+  display: flex;
+  padding: 110px;
+}
+
 .new-jam-form {
   height: auto;
-  width: 535px;
+  width: 650px;
   background-color: white;
   color: #484848;
   border-radius: 4px;
@@ -9,29 +14,41 @@
   margin: 20px 0px;
   h1 {
     margin-top: 0px;
+    text-align: center;
   }
+
+  .form-control {
+    border-radius: 5px;
+  }
+
+    .form-group {
+    font-family: raleway;
+  }
+
 }
 
-.form-group {
-  margin-right: 50%;
-  font-family: raleway;
+#image-next-to-form {
+  width: 65%;
+  background-image: url('microphone-cropped.jpg');
+  background-size: cover;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
 }
-
-// .input {
-//   background-color: white;
-// }
 
 #jam_title {
-  width: 500px;
+  // width: 500px;
 }
 #jam_location {
-  width: 500px;
+  // width: 500px;
+
 }
-#center-align-text {
-  text-align: center;
+#left-align-text {
+  text-align: left;
   width: 100%;
-  margin-left: 25%;
 }
+
+
 
   #jam_photo {
     margin: 8px;
@@ -65,3 +82,4 @@ input[type="file"] {
 .white-box {
   background-color: white !important;
 }
+
