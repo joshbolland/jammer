@@ -1,10 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Set up instance variables
+@users = User.all
+@instruments = Instrument.all
 
 # Clean out the DB
 def wipe_db
@@ -29,16 +25,15 @@ def wipe_db
 end
 
 # iterate over instruments YAML
-def db_seed_instruments
-  puts "Seeding instruments..."
-  path = Rails.root.join('db','seeds','instruments.yml')
+def db_seed(file)
+  path = Rails.root.join('db','seeds',file)
   puts "Seeding file #{path}"
   File.open(path) do |file|
     YAML.load_documents(file) do |doc|
       doc.keys.sort.each do |key|
         puts "Seeding key #{key}"
         attributes = doc[key]
-        create_a_seed_instrument(attributes)
+        yield(attributes)
       end
     end
   end
@@ -47,84 +42,30 @@ end
 
 # Seed one instrument
 def create_a_seed_instrument(attributes)
-  Instrument.create(attributes)
+  Instrument.create!(attributes)
   puts "Created #{Instrument.last.name}."
-end
-
-# iterate over users YAML
-def db_seed_users
-  puts "Seeding users..."
-  path = Rails.root.join('db','seeds','users.yml')
-  puts "Seeding file #{path}"
-  File.open(path) do |file|
-    YAML.load_documents(file) do |doc|
-      doc.keys.sort.each do |key|
-        puts "Seeding key #{key}"
-        attributes = doc[key]
-        create_a_seed_user(attributes)
-      end
-    end
-  end
-  puts "DONE!"
 end
 
 # Seed one user
 def create_a_seed_user(attributes)
-  user = User.new(attributes)
-  user.save!
-  puts "Created #{user.first_name}."
+  User.create!(attributes)
+  puts "Created #{User.last.first_name}."
 end
 
-# Assign instruments to users
-def assign_instruments
-  puts "Assigning instruments..."
-  users = User.all
+# Seed one jam
+def create_a_seed_jam(attributes)
+  jam = Jam.new(attributes)
+  jam.update(user: @users.sample)
+  jam.save!
+  puts "Created #{Jam.last.title}."
+end
 
-  puts "Assigning lead guitar players."
-  users[0..4].each do |user|
+def assign_instrument(instrument, start, stop)
+  puts "Assigning #{instrument.name}"
+  @users[start..stop].each do |user|
     @user_instrument = UserInstrument.new
     @user_instrument.user = user
-    @user_instrument.instrument = Instrument.first
-    @user_instrument.ability = (rand(5) + 1).to_s
-    @user_instrument.save
-    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
-  end
-
-  puts "Assigning bassists."
-  users[3..6].each do |user|
-    @user_instrument = UserInstrument.new
-    @user_instrument.user = user
-    @user_instrument.instrument = Instrument.second
-    @user_instrument.ability = (rand(5) + 1).to_s
-    @user_instrument.save
-    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
-  end
-
-  puts "Assigning drummers."
-  users[7..9].each do |user|
-    @user_instrument = UserInstrument.new
-    @user_instrument.user = user
-    @user_instrument.instrument = Instrument.third
-    @user_instrument.ability = (rand(5) + 1).to_s
-    @user_instrument.save
-    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
-  end
-
-  puts "Assigning vocalists."
-  users[2..5].each do |user|
-    @user_instrument = UserInstrument.new
-    @user_instrument.user = user
-    @user_instrument.instrument = Instrument.fourth
-    @user_instrument.ability = (rand(5) + 1).to_s
-    @user_instrument.save
-    puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
-  end
-
-  puts "Assigning keys."
-  users[8..9].each do |user|
-    @user_instrument = UserInstrument.new
-    @user_instrument.user = user
-    @user_instrument.instrument = Instrument.fifth
+    @user_instrument.instrument = instrument
     @user_instrument.ability = (rand(5) + 1).to_s
     @user_instrument.save
     puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
@@ -133,6 +74,11 @@ end
 
 # Begin Seeding
 wipe_db
-db_seed_instruments
-db_seed_users
-assign_instruments
+db_seed('instruments.yml') { |attributes| create_a_seed_instrument(attributes) }
+db_seed('users.yml') { |attributes| create_a_seed_user(attributes) }
+db_seed('jams.yml') { |attributes| create_a_seed_jam(attributes) }
+assign_instrument(@instruments.first, 0, 4)
+assign_instrument(@instruments.second, 3, 6)
+assign_instrument(@instruments.third, 7, 9)
+assign_instrument(@instruments.fourth, 2, 5)
+assign_instrument(@instruments.fifth, 8, 9)
