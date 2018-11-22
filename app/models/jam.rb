@@ -1,6 +1,6 @@
 class Jam < ApplicationRecord
   belongs_to :user
-  has_many :slots
+  has_many :slots, dependent: :destroy
   validates :title, presence: true
   validates :description, presence: true
   validates :date, presence: true
