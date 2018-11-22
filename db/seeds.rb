@@ -29,21 +29,37 @@ def wipe_db
 end
 
 # iterate over instruments YAML
-def db_seed_instruments
-  puts "Seeding instruments..."
-  path = Rails.root.join('db','seeds','instruments.yml')
+def db_seed(file)
+  path = Rails.root.join('db','seeds',file)
   puts "Seeding file #{path}"
   File.open(path) do |file|
     YAML.load_documents(file) do |doc|
       doc.keys.sort.each do |key|
         puts "Seeding key #{key}"
         attributes = doc[key]
-        create_a_seed_instrument(attributes)
+        yield(attributes)
       end
     end
   end
   puts "DONE!"
 end
+
+# # iterate over instruments YAML
+# def db_seed_instruments
+#   puts "Seeding instruments..."
+#   path = Rails.root.join('db','seeds','instruments.yml')
+#   puts "Seeding file #{path}"
+#   File.open(path) do |file|
+#     YAML.load_documents(file) do |doc|
+#       doc.keys.sort.each do |key|
+#         puts "Seeding key #{key}"
+#         attributes = doc[key]
+#         create_a_seed_instrument(attributes)
+#       end
+#     end
+#   end
+#   puts "DONE!"
+# end
 
 # Seed one instrument
 def create_a_seed_instrument(attributes)
@@ -133,6 +149,7 @@ end
 
 # Begin Seeding
 wipe_db
-db_seed_instruments
+db_seed('instruments.yml') { |attributes| create_a_seed_instrument(attributes) }
+# db_seed_instruments
 db_seed_users
 assign_instruments
