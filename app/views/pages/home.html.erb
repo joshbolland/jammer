@@ -6,7 +6,9 @@
           <h1>Jammer</h1>
           <h3>Connecting Musicians</h3>
           <h4>Find your future bandmates</h4>
-          <%= form_tag users_path, class: "form", method: :get do %>
+          <%= form_tag jams_path, class: "form", method: :get do %>
+          <p>Instrument</p>
+          <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name") %><br>
           <p>WHERE</p>
           <%= text_field_tag :location, params[:location], class: "input", id: "musician_location" %><br>
           <%= submit_tag ("Search"), class: "button_primary" %>
