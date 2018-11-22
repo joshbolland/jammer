@@ -1,4 +1,4 @@
 meta_product_name: "Jammer"
 meta_title: "Jammer | Connecting Musicians"
 meta_description: "Jammer connects you with other musicians - find your future bandmates."
-meta_image: "microphone.jpg"                       # should exist in `app/assets/images/`
+meta_image: "app/assets/images/microphone.jpg"                       # should exist in `app/assets/images/`
