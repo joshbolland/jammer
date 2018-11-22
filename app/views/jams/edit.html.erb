@@ -17,9 +17,10 @@
             <%= f.input :description %>
           </div>
           <div class="form-actions">
-            <center><%= f.submit "Update jam", class: "button_primary" %></center>
+            <center><%= f.submit "Update Jam", class: "button_primary" %></center><br>
           </div>
         <% end %>
+        <center><%= link_to("Delete Jam", jam_path(@jam), method: :delete, class: "button_primary") %></center>
       </div>
     </div>
   </div>
