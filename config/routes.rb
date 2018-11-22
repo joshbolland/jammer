@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :slots, only: :show do
     resources :requests, only: [:new, :create]
   end
+  resources :requests, only: [:update, :destroy]
 end
