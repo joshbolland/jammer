@@ -22,7 +22,8 @@ class JamsController < ApplicationController
     @markers = @jams.map do |jam|
       {
         lng: jam.longitude,
-        lat: jam.latitude
+        lat: jam.latitude,
+        infoWindow: { content: render_to_string(partial: "/jams/map_window", locals: { jam: jam }) }
       }
     end
 
