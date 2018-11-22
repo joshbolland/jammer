@@ -25,7 +25,6 @@ class RequestsController < ApplicationController
 
     if params[:status] == "accepted"
       @request.slot.update(user: @request.user)
-      raise
     end
 
     @request.update(status: params[:status])
