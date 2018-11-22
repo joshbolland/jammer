@@ -1,6 +1,23 @@
 class JamsController < ApplicationController
   def index
-    @jams = Jam.where.not(latitude: nil, longitude: nil)
+    @location = params[:location]
+    if params[:location].present?
+      instrument = Instrument.find(params[:instrument])
+      @jams = Jam.where.not(latitude: nil, longitude: nil).near(params[:location], 10).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+      if params[:date].present?
+        instrument = Instrument.find(params[:instrument])
+        @jams = Jam.where.not(latitude: nil, longitude: nil).near(params[:location], 10).where(date: params[:date]).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+      end
+    elsif params[:instrument].present?
+      instrument = Instrument.find(params[:instrument])
+      @jams = Jam.where.not(latitude: nil, longitude: nil).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+      if params[:date].present?
+        instrument = Instrument.find(params[:instrument])
+        @jams = Jam.where.not(latitude: nil, longitude: nil).where(date: params[:date]).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+      end
+    else
+      @jams = Jam.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @jams.map do |jam|
       {
@@ -8,6 +25,8 @@ class JamsController < ApplicationController
         lat: jam.latitude
       }
     end
+
+    @instruments = Instrument.all
   end
 
   def show

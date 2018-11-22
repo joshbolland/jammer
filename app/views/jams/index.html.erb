@@ -1,10 +1,69 @@
-<h1>Find jams in your area</h1>
-<p></p>
-<div
-  id="map"
-  style="width: 700px;
-  height: 500px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-<%= link_to "New Jam", new_jam_path %>
+
+  <div class="search-bar">
+    <h2>Find jams in your area</h2>
+      <%= form_tag jams_path, method: :get, :class => "form-group row" do %>
+        <div class="col-md-2">
+          <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "form-control" %>
+        </div>
+        <div class="col-md-4">
+          <%= text_field_tag :location, params[:location], placeholder: 'Where', class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= text_field_tag :date, params[:date], placeholder: 'When?', class: "form-control datepicker" %>
+        </div>
+        <div class="col-md-3 search-button">
+          <%= submit_tag ("Search"), class: "button_secondary" %>
+        </div>
+      <% end %>
+  </div>
+
+
+  <div class="content">
+    <div class="cards-container">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <div class="title">
+            <% if @jams.count == 1 && @location.present? %>
+              <h3> <%= @jams.count %> jam available in <%= @location %>: </h3>
+            <% elsif @jams.count == 1 && @location.blank? %>
+              <h3> <%= @jams.count %> jam available: </h3>
+            <% elsif @jams.count != 1 && @location.present? %>
+              <h3> <%= @jams.count %> jams available in <%= @location %>: </h3>
+            <% elsif @jams.count != 1 && @location.blank? %>
+              <h3> <%= @jams.count %> jams available: </h3>
+            <% end %>
+          </div>
+        </div>
+        <% @jams.each do |jam| %>
+          <div class="col-xs-12 col-md-12">
+            <div class="result-card">
+              <div class="result-image">
+                <% if jam.photo.blank? %>
+                  <%= cl_image_tag("lbf9irqu7pjyp0zaow8h",
+                    width: 180, height: 180, crop: :fill) %>
+                <% else %>
+                  <%= cl_image_tag jam.photo, width: 180, height: 180, crop: :fill, class: "result-img" %>
+                <% end %>
+              </div>
+              <div class="result-description">
+                <h3> <%= jam.title %> | <i class="fas fa-map-marker-alt"></i></i> <%= jam.location %> </h3>
+                <p> When: <%= jam.date %> </p>
+                <p> Available slots: </p>
+                <p> | <% jam.slots.each do |slot| %>
+                  <%= slot.instrument.name %> |
+                <% end %> </p>
+              </div>
+              <div class="result-button">
+              <%= link_to 'More info', jam, class: "button_primary" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
