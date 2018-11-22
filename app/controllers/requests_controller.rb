@@ -19,6 +19,17 @@ class RequestsController < ApplicationController
       render :new
     end
   end
+  
+  def update
+    @request = Request.find(params[:id])
+
+    if params[:status] == "accepted"
+      @request.slot.update(user: @request.user)
+    end
+
+    @request.update(status: params[:status])
+    redirect_to user_path(@request.slot.jam.user)
+  end
 
   private
 
