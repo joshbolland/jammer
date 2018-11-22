@@ -1,6 +1,13 @@
 class JamsController < ApplicationController
   def index
-    @jams = Jam.all
+    @jams = Jam.where.not(latitude: nil, longitude: nil)
+
+    @markers = @jams.map do |jam|
+      {
+        lng: jam.longitude,
+        lat: jam.latitude
+      }
+    end
   end
 
   def show

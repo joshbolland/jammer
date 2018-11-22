@@ -1,3 +1,10 @@
-<h1>Jams#index</h1>
-<p>Find me in app/views/jams/index.html.erb</p>
+<h1>Find jams in your area</h1>
+<p></p>
+<div
+  id="map"
+  style="width: 700px;
+  height: 500px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 <%= link_to "New Jam", new_jam_path %>
