@@ -25,6 +25,14 @@
     margin-right: 50%;
     font-family: raleway;
   }
+
+  .input {
+    width: 100%;
+    border: none !important;
+    border-bottom: 1px solid rgba(48, 48, 48, 0.3);
+    color: $jammer-black;
+  }
+
 }
 
 #image-next-to-form {
@@ -36,19 +44,10 @@
   border-radius: 4px;
 }
 
-#jam_title {
-  // width: 500px;
-}
-#jam_location {
-  // width: 500px;
-
-}
 #left-align-text {
   text-align: left;
   width: 100%;
 }
-
-
 
   #jam_photo {
     margin: 8px;
@@ -103,6 +102,8 @@
     border-radius: 3px;
     opacity: 0.9;
   }
+}
+
 
   #musician_location {
     width: 100%;
@@ -143,7 +144,7 @@ input[type="file"] {
   box-shadow: 0 1px 1px -2px rgba(226, 226, 226, 0.2);
 }
 
-.white-box {
-  background-color: white !important;
+  .white-box {
+    background-color: white !important;
 }
 
