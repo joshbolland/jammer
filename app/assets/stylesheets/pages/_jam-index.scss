@@ -68,3 +68,23 @@
   margin-left: -70px;
   padding-top: 3px;
 }
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0px;
+  h4 {
+  font-size: 20px;
+  margin: 8px 0px 8px 0px;
+  }
+  p {
+  margin: 0 0 5px;
+  }
+}
+
+.form-control .ap-input {
+  width: 300px;
+}

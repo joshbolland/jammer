@@ -1,0 +1,15 @@
+<div class="mapboxgl-popup">
+  <div class="mapboxgl-popup-content">
+    <h4><%= link_to jam.title , jam %></h4>
+    <p><%= jam.date %></p>
+    <p> | <% jam.slots.each do |slot| %>
+            <%= slot.instrument.name %> |
+          <% end %> </p>
+    <% if jam.photo.blank? %>
+      <%= cl_image_tag("lbf9irqu7pjyp0zaow8h",
+          width: 200, height: 120, crop: :fill) %>
+    <% else %>
+      <%= cl_image_tag jam.photo, width: 200, height: 120, crop: :fill, class: "result-img" %>
+    <% end %>
+  </div>
+</div>

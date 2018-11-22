@@ -6,7 +6,7 @@
           <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "form-control" %>
         </div>
         <div class="col-md-4">
-          <%= text_field_tag :location, params[:location], placeholder: 'Where', class: "form-control" %>
+          <%= text_field_tag :location, params[:location], placeholder: 'Where', class: "form-control", id: "jam_location" %>
         </div>
         <div class="col-md-3">
           <%= text_field_tag :date, params[:date], placeholder: 'When?', class: "form-control datepicker" %>
