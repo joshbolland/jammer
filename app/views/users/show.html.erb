@@ -24,6 +24,7 @@
             <%= link_to "decline", request_path(request, status: "declined"), method: :patch %><br>
           <% end %>
         <% end %>
+        <%= link_to "Edit Profile", edit_user_registration_path(@user), class: "button_primary" if @user == current_user %>
       </div>
     </div>
   </div>
