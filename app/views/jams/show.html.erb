@@ -16,7 +16,7 @@
 
 <% end %>
 
-          <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" %>
+          <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
           <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
           <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
         </div>
