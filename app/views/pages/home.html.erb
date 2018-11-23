@@ -14,7 +14,7 @@
           <p>WHEN</p>
           <%= text_field_tag :date, params[:date], class: "form-control datepicker" %>
           <br><br>
-          <%= submit_tag ("Search"), class: "button_primary" %>
+            <%= render 'shared/search_button', class: "button_primary" %>
           <% end %>
         </div>
       </div>
