@@ -8,5 +8,6 @@ class UsersController < ApplicationController
     @hosted_jams = @user.jams
     @hosted_slots = Slot.where(jam: @hosted_jams)
     @pending_requests = Request.where(slot: @hosted_slots, status: "pending")
+    @personal_requests = Request.where(user: @user, status: "pending")
   end
 end
