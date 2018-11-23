@@ -19,37 +19,37 @@
           <% end %>
         </div> -->
 
-      <div class="svg-wrapper_logged_in">
-          <%= link_to jams_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape_logged_in" height="40" width="90"/>
-              <div id="text">
-                <span class="spot"></span>Jams
-              </div>
-            </svg>
-          <% end %>
-        </div>
+      <div class="svg-wrapper">
+        <%= link_to new_jam_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+          <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="90"/>
+            <div id="text_logged_out">
+              <span class=""></span>Host a Jam
+            </div>
+          </svg>
+        <% end %>
+      </div>
 
-        <div class="svg-wrapper_logged_in">
-          <%= link_to users_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape_logged_in" height="40" width="90"/>
-              <div id="text">
-                <span class="spot"></span>Search
-              </div>
-            </svg>
-          <% end %>
-        </div>
-        <div class="svg-wrapper_logged_in">
-          <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" do %>
-            <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
-              <rect id="shape_logged_in" height="40" width="90" />
-              <div id="text">
-                <span class="spot"></span>Sign out
-              </div>
-            </svg>
-          <% end %>
-        </div>
+      <div class="svg-wrapper">
+        <%= link_to jams_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+          <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="90"/>
+            <div id="text_logged_out">
+              <span class="spot"></span>Join a Jam
+            </div>
+          </svg>
+        <% end %>
+      </div>
+      <div class="svg-wrapper">
+        <%= link_to destroy_user_session_path, method: "delete", class: "navbar-wagon-item navbar-wagon-link" do %>
+          <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="90"/>
+            <div id="text_logged_out">
+              <span class="spot"></span>Sign Out
+            </div>
+          </svg>
+        <% end %>
+      </div>
           <%= link_to user_path(current_user) do %>
           <%= cl_image_tag current_user.photo, class: "profilepic" %>
         <% end %>
@@ -58,8 +58,8 @@
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <div class="svg-wrapper">
         <%= link_to new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="150"/>
+          <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="90"/>
             <div id="text_logged_out">
               <span class="spot"></span>Sign in
             </div>
@@ -68,8 +68,8 @@
       </div>
       <div class="svg-wrapper">
         <%= link_to new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-          <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-            <rect id="shape" height="40" width="150" />
+          <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
+            <rect id="shape" height="40" width="90" />
             <div id="text_logged_out">
               <span class="spot"></span>Sign up
             </div>
