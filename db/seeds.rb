@@ -1,6 +1,3 @@
-# Set up instance variables
-@users = User.all
-@instruments = Instrument.all
 
 # Clean out the DB
 def wipe_db
@@ -53,11 +50,11 @@ def create_a_seed_user(attributes)
 end
 
 # Seed one jam
-def create_a_seed_jam(attributes)
+def create_a_jam(attributes, user)
   jam = Jam.new(attributes)
-  jam.update(user: @users.sample)
+  jam.user = user
   jam.save!
-  puts "Created #{Jam.last.title}."
+  puts "Created #{Jam.last.title} hosted by #{Jam.last.user.first_name} #{Jam.last.user.last_name}."
 end
 
 def assign_instrument(instrument, start, stop)
@@ -74,9 +71,15 @@ end
 
 # Begin Seeding
 wipe_db
+
 db_seed('instruments.yml') { |attributes| create_a_seed_instrument(attributes) }
+@instruments = Instrument.all
+
 db_seed('users.yml') { |attributes| create_a_seed_user(attributes) }
-db_seed('jams.yml') { |attributes| create_a_seed_jam(attributes) }
+@users = User.all
+db_seed('jam01.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Die").first) }
+db_seed('jam02.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Lou").first) }
+
 assign_instrument(@instruments.first, 0, 4)
 assign_instrument(@instruments.second, 3, 6)
 assign_instrument(@instruments.third, 7, 9)

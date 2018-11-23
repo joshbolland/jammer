@@ -1,10 +1,3 @@
-demo_user:
-  email: "demo@demo.com"
-  password: "password"
-  first_name: "Demolition"
-  last_name: "Cat"
-  bio: "Cannot think of a better profile at the moment"
-  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-22.jpg"
 generic_user00:
   email: "gen00@demo.com"
   password: "password"
