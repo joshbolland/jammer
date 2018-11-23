@@ -4,6 +4,9 @@
       <div class="profilecard">
         <%= cl_image_tag @user.photo, class: "avatar-bordered-md" %>
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p> | <% @user.instruments.each do |instrument| %>
+            <%= instrument.name %> |
+        <% end %> </p>
         <hr>
         <h3>About me</h3>
         <p><%= @user.bio %></p>
