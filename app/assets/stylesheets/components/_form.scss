@@ -37,16 +37,18 @@
 
 #image-next-to-form {
   width: 65%;
-  background-image: url('microphone-cropped.jpg');
+  background-image: url('saxy-guy.jpg');
   background-size: cover;
   margin-bottom: 20px;
   margin-top: 20px;
   border-radius: 4px;
+  margin-left: -43px;
 }
 
-#left-align-text {
-  text-align: left;
+#center-align-text {
+  text-align: center;
   width: 100%;
+  margin-left: 25%;
 }
 
   #jam_photo {
@@ -126,7 +128,7 @@
   #instrument:focus {
     outline: none
   }
-}
+
 input[type="file"] {
     display: none;
 }
@@ -151,7 +153,26 @@ input[type="file"] {
   box-shadow: 0 1px 1px -2px rgba(226, 226, 226, 0.2);
 }
 
-  .white-box {
+  #white-box {
     background-color: white !important;
+
+    border-top: 0 1px 1px -2px solid rgb(226, 226, 226) !important;
 }
+
+.fancy-form {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(48, 48, 48, 0.3);
+    margin-bottom: 20px;
+    color: $jammer-black;
+    border-radius: 0px !important;
+    box-shadow: none;
+  }
+
+  .fancy-form:focus {
+    outline: none;
+    cursor: auto;
+  }
+
+
 
