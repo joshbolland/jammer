@@ -11,7 +11,7 @@
           <hr>
           <h3>Jams I'm Hosting</h3>
           <% @hosted_jams.each do |jam| %>
-            <%= jam.title %> | <%= jam.location %> | <%= jam.date %> | <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %><br><br>
+            <p><%= jam.title %> | <em><%= jam.location %></em> | <%= jam.date %> | <%= link_to "Details", jam_path(jam), class: "button-primary" %></p><br><br>
           <% end %>
         <% end %>
 
