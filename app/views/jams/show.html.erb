@@ -6,7 +6,7 @@
         <%= cl_image_tag @jam.photo,  width: 400, height: 200, crop: :fill, class: "jam-avatar" %>
         <h4>Details about this jam:</h4>
         <p> Where: <%= @jam.location %> </p>
-        <p> Date: <%= @jam.date.strftime(' %a, %b %e, %Y') %> | Time: <%= @jam.time.strftime('%-I%p') %> </p>
+        <p> Date: <%= @jam.date %> | Time: <%= @jam.time %> </p>
           <h4> Description:</h4>
           <p> <%= @jam.description %> </p>
           <h3>Jammers</h3>
@@ -16,7 +16,7 @@
 
 <% end %>
 
-          <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" %>
+          <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
           <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
           <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
         </div>
