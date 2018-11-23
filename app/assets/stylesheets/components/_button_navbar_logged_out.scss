@@ -31,6 +31,11 @@
   text-align: center;
   font-size: 13px;
   width: 70px;
+
+  span {
+  width: 90px;
+  height: 40px;
+}
 }
 
 .svg-wrapper_logged_in:hover #shape_logged_in {
@@ -39,8 +44,3 @@
   stroke-dashoffset: 0;
   stroke: $jammer-purple;
   }
-
-span {
-  width: 90px;
-  height: 40px;
-}
