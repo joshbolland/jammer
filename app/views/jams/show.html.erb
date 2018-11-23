@@ -4,22 +4,28 @@
       <div class="profilecard">
         <h3> <%= @jam.title %> </h3>
         <%= cl_image_tag @jam.photo,  width: 400, height: 200, crop: :fill, class: "jam-avatar" %>
-        <h4>Details about this jam:</h4>
+        <h3>Details about this jam</h3>
         <p> Where: <%= @jam.location %> </p>
         <p> Date: <%= @jam.date %> | Time: <%= @jam.time %> </p>
-          <h4> Description:</h4>
-          <p> <%= @jam.description %> </p>
-          <h3>Jammers</h3>
-          <% @jam.slots.each do |slot| %>
-  <p><%= slot.instrument.name %></p>
-  <p><%= link_to "request this slot", new_slot_request_path(slot) %></p>
+        <h3> Description</h3>
+        <p> <%= @jam.description %> </p>
+        <h3>Jammers</h3>
+        <% @jam.slots.each do |slot| %>
+          <!-- if the slot has a user attached to it  -->
+          <% if slot.user != nil %>
+          <!-- show the user name, their instrument, and a link back to their profile -->
+            <p><%= slot.instrument.name %> | <%=  slot.user.first_name %> <%= slot.user.last_name %> <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %></p>
+          <!-- else -->
+          <% else %>
+          <p><%= slot.instrument.name %> <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %></p><br>
+          <!-- end -->
+          <% end %>
+        <% end %>
 
-<% end %>
-
-          <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
-          <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
-          <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
-        </div>
+        <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
+        <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
+        <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
+      </div>
     </div>
   </div>
 </div>
