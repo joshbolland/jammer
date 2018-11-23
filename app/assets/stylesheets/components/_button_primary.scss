@@ -51,5 +51,55 @@ text-decoration: none !important;
   right: 0;
 }
 
+.little-search-primary {
+    background-color: #7f51ff;
+    width: 125px;
+    height: 36px;
+    border-radius: 5px;
+    font-family: raleway;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    color: white;
+    padding: 3px 15px;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    margin: -2px;
+}
+
+.little-search-primary:hover {
+  color: white;
+  background-color: $jammer-hover-purple;
+  box-shadow: 0 1px 1px -2px rgb(226, 226, 226);
+  transition: all 0.3s ease;
+}
+
+.little-search-primary span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+
+.little-search-primary span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.little-search-primary:hover span {
+  padding-right: 25px;
+}
+
+.little-search-primary:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 
 

@@ -12,7 +12,7 @@
           <%= text_field_tag :date, params[:date], placeholder: 'When?', class: "form-control datepicker" %>
         </div>
         <div class="col-md-3 search-button">
-          <%= submit_tag ("Search"), class: "button_secondary" %>
+          <%= render 'shared/little_search_button', class: "little-search-primary"%>
         </div>
       <% end %>
   </div>
