@@ -14,7 +14,7 @@
           <hr>
           <h3>Jams I'm Hosting</h3>
           <% @hosted_jams.each do |jam| %>
-            <p><%= jam.title %> | <em><%= jam.location %></em> | <%= jam.date %> <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %></p><br><br>
+            <p><%= jam.title %> | <em><%= jam.location %></em> | <%= jam.date %> <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %></p>
           <% end %>
         <% end %>
 
@@ -31,8 +31,8 @@
           <h3>Pending Requests</h3>
           <% @pending_requests.each do |request| %>
             <%= request.user.first_name %> <%= request.user.last_name %>| <%= request.message %><br>
-            <%= link_to "accept", request_path(request, status: "accepted"), method: :patch %>
-            <%= link_to "decline", request_path(request, status: "declined"), method: :patch %><br>
+            <%= link_to "Accept", request_path(request, status: "accepted"), method: :patch, class: "custom-file-upload" %> |
+            <%= link_to "Decline", request_path(request, status: "declined"), method: :patch, class: "custom-file-upload" %><br><br>
           <% end %>
         <% end %>
 
