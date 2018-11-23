@@ -27,6 +27,14 @@
             <%= link_to "decline", request_path(request, status: "declined"), method: :patch %><br>
           <% end %>
         <% end %>
+
+        <% if @personal_requests.size > 0 && @user == current_user %>
+          <hr>
+          <h3>My Requests</h3>
+          <% @personal_requests.each do |request| %>
+            <p><%= request.slot.jam.title %> | <em><%= request.slot.jam.location %></em> | <%= request.slot.jam.date %> | <%= link_to "Details", jam_path(request.slot.jam), class: "custom-file-upload" %></p><br><br>
+          <% end %>
+        <% end %>
         <%= link_to "Edit Profile", edit_user_registration_path(@user), class: "button_primary" if @user == current_user %>
       </div>
     </div>

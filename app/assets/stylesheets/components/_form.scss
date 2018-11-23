@@ -134,6 +134,7 @@
   margin-top: 7px;
   padding: 8px;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .custom-file-upload:hover {
@@ -141,6 +142,7 @@
   background-color: $jammer-hover-blue;
   color: white;
   box-shadow: 0 1px 1px -2px rgba(226, 226, 226, 0.2);
+  text-decoration: none;
 }
 .white-box {
   background-color: white !important;
