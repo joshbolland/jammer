@@ -4,6 +4,9 @@
       <div class="profilecard">
         <%= cl_image_tag @user.photo, class: "avatar-bordered-md" %>
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p> | <% @user.instruments.each do |instrument| %>
+            <%= instrument.name %> |
+        <% end %> </p>
         <hr>
         <h3>About me</h3>
         <p><%= @user.bio %></p>
@@ -11,7 +14,15 @@
           <hr>
           <h3>Jams I'm Hosting</h3>
           <% @hosted_jams.each do |jam| %>
-            <%= jam.title %> | <%= jam.location %> | <%= jam.date %> | <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %><br><br>
+            <p><%= jam.title %> | <em><%= jam.location %></em> | <%= jam.date %> <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %></p>
+          <% end %>
+        <% end %>
+
+        <% if @confirmed_slots.size > 0 %>
+          <hr>
+          <h3>Slots I'm Playing</h3>
+          <% @confirmed_slots.each do |slot| %>
+            <p><%= slot.instrument.name %> | <em><%= slot.jam.title %></em> | <%= slot.jam.date %> <%= link_to "Details", jam_path(slot.jam), class: "custom-file-upload" %></p><br><br>
           <% end %>
         <% end %>
 
@@ -20,8 +31,16 @@
           <h3>Pending Requests</h3>
           <% @pending_requests.each do |request| %>
             <%= request.user.first_name %> <%= request.user.last_name %>| <%= request.message %><br>
-            <%= link_to "accept", request_path(request, status: "accepted"), method: :patch %>
-            <%= link_to "decline", request_path(request, status: "declined"), method: :patch %><br>
+            <%= link_to "Accept", request_path(request, status: "accepted"), method: :patch, class: "custom-file-upload" %> |
+            <%= link_to "Decline", request_path(request, status: "declined"), method: :patch, class: "custom-file-upload" %><br><br>
+          <% end %>
+        <% end %>
+
+        <% if @personal_requests.size > 0 && @user == current_user %>
+          <hr>
+          <h3>My Requests</h3>
+          <% @personal_requests.each do |request| %>
+            <p><%= request.slot.jam.title %> | <em><%= request.slot.jam.location %></em> | <%= request.slot.jam.date %> | <%= link_to "Details", jam_path(request.slot.jam), class: "custom-file-upload" %></p><br><br>
           <% end %>
         <% end %>
         <%= link_to "Edit Profile", edit_user_registration_path(@user), class: "button_primary" if @user == current_user %>

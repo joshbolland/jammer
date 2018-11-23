@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @hosted_jams = @user.jams
     @hosted_slots = Slot.where(jam: @hosted_jams)
+    @confirmed_slots = Slot.where(user: @user)
     @pending_requests = Request.where(slot: @hosted_slots, status: "pending")
+    @personal_requests = Request.where(user: @user, status: "pending")
   end
 end

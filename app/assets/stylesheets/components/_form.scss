@@ -28,7 +28,7 @@
 
   .input {
     width: 100%;
-    border: none !important;
+    // border: none !important;
     border-bottom: 1px solid rgba(48, 48, 48, 0.3);
     color: $jammer-black;
   }
@@ -36,7 +36,6 @@
 
 #image-next-to-form {
   width: 65%;
-  background-image: url('saxy-guy.jpg');
   background-size: cover;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -118,10 +117,12 @@
     outline: none
   }
 
-input[type="file"] {
-  display: none;
-}
+  input[type="file"] {
+    display: none;
+  }
 
+
+}
 .custom-file-upload {
   width: 113px;
   height: 32px;
@@ -132,6 +133,7 @@ input[type="file"] {
   margin-top: 7px;
   padding: 8px;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .custom-file-upload:hover {
@@ -139,26 +141,29 @@ input[type="file"] {
   background-color: $jammer-hover-blue;
   color: white;
   box-shadow: 0 1px 1px -2px rgba(226, 226, 226, 0.2);
+  text-decoration: none;
 }
-
-
-  #white-box {
-    background-color: white !important;
-    border-top: 0 1px 1px -2px solid rgb(226, 226, 226) !important;
+.white-box {
+  background-color: white !important;
+  border-top: 0 1px 1px -2px solid rgb(226, 226, 226) !important;
 }
 
 .fancy-form {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid rgba(48, 48, 48, 0.3);
-    margin-bottom: 20px;
-    color: $jammer-black;
-    border-radius: 0px !important;
-    box-shadow: none;
-  }
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(48, 48, 48, 0.3);
+  margin-bottom: 20px;
+  color: $jammer-black;
+  border-radius: 0px !important;
+  box-shadow: none;
+}
 
-  .fancy-form:focus {
-    outline: none;
-    cursor: auto;
-  }
+.fancy-form:focus {
+  outline: none;
+  cursor: auto;
+}
+
+#file-upload {
+  opacity: 0;
+  height: 0;
 }

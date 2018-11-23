@@ -1,5 +1,5 @@
 <div class="flexbox">
-  <div id="image-next-to-form">
+  <div id="image-next-to-form" style="background-image: url( <%= image_path 'saxy-guy.jpg' %>);">
   </div>
   <div class="new-jam-form input">
     <h1>Create new Jam</h1>
@@ -11,8 +11,8 @@
       <div class="form-inputs">
         <%= f.input :title, input_html: {class: "fancy-form"} %>
         <%= f.input :location, input_html: {class: "fancy-form"} %>
-        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker" "white-box"} %>
-        <%= f.input :time, as: :string, required: false, input_html: {class: "timepicker" "white-box"} %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker white-box"} %>
+        <%= f.input :time, as: :string, required: false, input_html: {class: "timepicker white-box"} %>
         <%= f.input :photo, input_html: {id: "file-upload"}, label: "Upload Photo", label_html: {for: "file-upload", class: "custom-file-upload"}%>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
