@@ -9,9 +9,9 @@
         <p><%= @user.bio %></p>
         <% if @hosted_jams.size > 0 %>
           <hr>
-          <h3>Hosted Jams</h3>
+          <h3>Jams I'm Hosting</h3>
           <% @hosted_jams.each do |jam| %>
-            <%= jam.title %> | <%= jam.location %> | <%= jam.date %> | <%= link_to "Details", jam_path(jam) %><br>
+            <%= jam.title %> | <%= jam.location %> | <%= jam.date %> | <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %><br><br>
           <% end %>
         <% end %>
 
@@ -20,7 +20,7 @@
           <h3>Pending Requests</h3>
           <% @pending_requests.each do |request| %>
             <%= request.user.first_name %> <%= request.user.last_name %>| <%= request.message %><br>
-            <%= link_to "accept", request_path(request, status: "accepted"), method: :patch %> 
+            <%= link_to "accept", request_path(request, status: "accepted"), method: :patch %>
             <%= link_to "decline", request_path(request, status: "declined"), method: :patch %><br>
           <% end %>
         <% end %>
