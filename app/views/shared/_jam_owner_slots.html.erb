@@ -1,5 +1,0 @@
-<% if slot.user != nil %>
-<p><%= slot.instrument.name %> | <%=  slot.user.first_name %> <%= slot.user.last_name %> <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %> <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %></p>
-<% else %>
-<p><%= slot.instrument.name %> <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %> <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %> </p><br>
-<% end %>
