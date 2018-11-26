@@ -1,0 +1,7 @@
+<% if @confirmed_slots.size > 0 %>
+  <hr>
+  <h3>Slots I'm Playing</h3>
+  <% @confirmed_slots.each do |slot| %>
+    <p><%= slot.instrument.name %> | <em><%= slot.jam.title %></em> | <%= slot.jam.date %> <%= link_to "Details", jam_path(slot.jam), class: "custom-file-upload" %></p><br><br>
+  <% end %>
+<% end %>

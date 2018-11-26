@@ -1,0 +1,7 @@
+<% if @hosted_jams.size > 0 %>
+  <hr>
+  <h3>Jams I'm Hosting</h3>
+  <% @hosted_jams.each do |jam| %>
+    <p><%= jam.title %> | <em><%= jam.location %></em> | <%= jam.date %> <%= link_to "Details", jam_path(jam), class: "custom-file-upload" %></p>
+  <% end %>
+<% end %>
