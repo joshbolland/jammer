@@ -16,7 +16,10 @@ class SlotsController < ApplicationController
   def destroy
     @slot = Slot.find(params[:id])
     @slot.destroy
-    redirect_to jam_path(@slot.jam)
+    respond_to do |format|
+      format.html { redirect_to jam_path(@slot.jam), notice: "Deleted Jam Slot!" }
+      format.json { head :no_content }
+    end
   end
 
   private
