@@ -1,0 +1,7 @@
+<% if @user.instruments.size > 0 %>
+<p>
+| <% @user.instruments.each do |instrument| %>
+    <%= instrument.name %> |
+  <% end %>
+</p>
+<% end %>
