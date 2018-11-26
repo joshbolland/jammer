@@ -5,9 +5,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    @user_instrument = UserInstrument.new
+    @available_instruments = Instrument.all - current_user.instruments
+
     @hosted_jams = @user.jams
+
     @hosted_slots = Slot.where(jam: @hosted_jams)
     @confirmed_slots = Slot.where(user: @user)
+
     @pending_requests = Request.where(slot: @hosted_slots, status: "pending")
     @personal_requests = Request.where(user: @user, status: "pending")
   end
