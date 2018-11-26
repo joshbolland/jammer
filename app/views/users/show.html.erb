@@ -4,9 +4,11 @@
       <div class="profilecard">
         <%= cl_image_tag @user.photo, class: "avatar-bordered-md" %>
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-        <p> | <% @user.instruments.each do |instrument| %>
-            <%= instrument.name %> |
-        <% end %> </p>
+        <%= render 'instrument_list' %> 
+        <%= render 'instrument_selector' %> 
+        
+        <!-- check if the user is the person viewing the page -->
+        <!-- if they are, show the user instrument select drop down -->
         <hr>
         <h3>About me</h3>
         <p><%= @user.bio %></p>
