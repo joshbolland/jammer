@@ -1,0 +1,9 @@
+<% if @personal_requests.size > 0 && @user == current_user %>
+  <hr>
+  <h3>My Requests</h3>
+  <% @personal_requests.each do |request| %>
+    <%= request.slot.jam.title %> | <em><%= request.slot.jam.location %></em> | <%= request.slot.jam.date %> | <%= request.message %> <br>
+    <%= link_to "Details", jam_path(request.slot.jam), class: "custom-file-upload" %> |
+    <%= link_to "Cancel", request_path(request), method: :delete, data: { confirm: "Your request will be cancelled. Do you want to continue?" },class: "custom-file-upload" %><br><br>
+  <% end %>
+<% end %>
