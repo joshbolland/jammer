@@ -7,51 +7,41 @@
   grid-template-rows: 100%;
   padding: 15px;
 }
-
 .profile .user-info {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
 }
-
 .user-info,
 .tab-section{
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    padding: 30px;
+    padding: 20px;
     margin: 10px;
     display: grid;
 }
-
 .tab-nav {
     list-style: none;
     border-bottom: 1px solid #bbb;
     padding-left: 5px;
 }
-
 .tab-nav li {
     display: inline;
-
 }
-
 .tab-nav li a.button {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     margin-bottom: -1px;
     border-bottom: none;
 }
-
 .tab-nav li a.active.button {
     border-bottom: 0.175em solid #fff;
 }
-
 .tab-content .tab-pane {
     display: none;
 }
-
 .tab-content .tab-pane.active {
     display: block;
 }
-
 .button {
   display: inline-block;
   height: 38px;
@@ -71,7 +61,7 @@
   cursor: pointer;
   box-sizing: border-box;
   transition-duration: 0.2s;
-  }
+}
 .button:hover,
 .button:focus {
   transition-duration: 0.5s;
@@ -105,6 +95,28 @@
 .columns {
   display: grid;
 }
-
-
-
+.user-info-content  {
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+    text-align: justify;
+  }
+  .form-control {
+    height: 26px;
+    font-size: 16px;
+    width: 70%;
+    display: inline;
+  }
+  .button_primary {
+    height: 31px;
+    width: 123px;
+    line-height: 20px;
+  }
+}
