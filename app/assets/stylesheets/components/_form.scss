@@ -109,6 +109,11 @@
     color: #333333;
   }
 
+  .ap-suggestion {
+    text-align: left;
+    font-size: 16px;
+  }
+
   #instrument {
     width: 100%;
     color: $jammer-black
@@ -121,9 +126,12 @@
   input[type="file"] {
     display: none;
   }
-
-
 }
+
+.ap-suggestion {
+  text-align: left;
+}
+
 .custom-file-upload {
   width: 113px;
   height: 32px;
