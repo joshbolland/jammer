@@ -13,6 +13,10 @@ class RequestsController < ApplicationController
     @slot = Slot.find(params[:slot_id])
     @request.user = current_user
     @request.slot = @slot
+    if params[:request] && params[:request][:status] == 'accepted'
+      @slot.user = current_user
+      @slot.save
+    end
     if @request.save
       redirect_to jam_path(@slot.jam)
     else

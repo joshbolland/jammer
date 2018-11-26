@@ -11,20 +11,36 @@
         <p> <%= @jam.description %> </p>
         <h3>Jammers</h3>
         <% @jam.slots.each do |slot| %>
-        <% if @jam.user == current_user %>
-        <% if slot.user != nil %>
-        <p><%= slot.instrument.name %> | <%=  slot.user.first_name %> <%= slot.user.last_name %> <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %> <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %></p>
-        <% else %>
-        <p><%= slot.instrument.name %> <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %> <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %> </p><br>
-        <% end %>
+          <% if @jam.user == current_user %>
+            <% if slot.user != nil %>
+              <p>
+                <% if @jam.user == slot.user %>
+                  <i class="fas fa-crown"></i>
+                <% end %>
+                <%= slot.instrument.name %> | <%= slot.user.first_name %> <%= slot.user.last_name %>
+                <% unless slot.user == current_user %>
+                  <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %>
+                <% end %>
+                <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %></p>
+            <% else %>
+              <p><%= slot.instrument.name %>
+                <%= link_to "Take this slot", slot_requests_path(slot, request: { status: "accepted" }), method: :post, class: "custom-file-upload" %> |
+                <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %> </p><br>
+            <% end %>
 
-        <% else %>
-        <% if slot.user != nil %>
-        <p><%= slot.instrument.name %> | <%=  slot.user.first_name %> <%= slot.user.last_name %> <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %></p>
-        <% else %>
-        <p><%= slot.instrument.name %> <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %></p><br>
-        <% end %>
-        <% end %>
+          <% else %>
+            <% if slot.user %>
+              <p>
+                <% if @jam.user == slot.user %>
+                  <i class="fas fa-crown"></i>
+                <% end %>
+                <%= slot.instrument.name %> | <%= slot.user.first_name %> <%= slot.user.last_name %>
+                <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %></p>
+            <% else %>
+              <p><%= slot.instrument.name %>
+                <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %></p><br>
+            <% end %>
+          <% end %>
         <% end %>
 
         <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
