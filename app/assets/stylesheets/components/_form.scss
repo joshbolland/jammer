@@ -1,7 +1,12 @@
 .flexbox {
   display: flex;
   padding: 110px;
-  margin-top: -110px;
+}
+
+.flexbox-jams {
+  display: flex;
+  padding: 110px;
+  margin-top: -80px;
 }
 
 .new-jam-form {
@@ -41,7 +46,6 @@
   margin-bottom: 20px;
   margin-top: 20px;
   border-radius: 4px;
-  margin-left: -43px;
 }
 
 #center-align-text {
@@ -231,5 +235,23 @@
   }
 }
 
+.instrument-form {
+  height: auto;
+  width: 470px;
+  background-size: cover !important;
+  background-color: white;
+  background-position: center;
+  color: #484848;
+  position: relative;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff inset, 0 1px 3px rgba(34,25,25,0.4);
+  padding: 35px;
+  margin: 20px;
+  margin-left: -60px;
 
+  .form-actions {
+    margin-left: 125px;
+  }
 
+}
