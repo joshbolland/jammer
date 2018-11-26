@@ -168,3 +168,32 @@
   opacity: 0;
   height: 0;
 }
+
+.form-login {
+    height: auto;
+    width: 410px;
+    background-size: cover !important;
+    background-color: white;
+    background-position: center;
+    color: #484848;
+    position: relative;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px #fff inset, 0 1px 3px rgba(34,25,25,0.4);
+    padding: 35px;
+    margin: 20px 0px;
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+.form-check-label {
+  font-weight: lighter !important;
+}
+
+.links {
+  margin-top: 25px;
+}
