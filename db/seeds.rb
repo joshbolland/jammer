@@ -63,7 +63,6 @@ def assign_instrument(instrument, start, stop)
     @user_instrument = UserInstrument.new
     @user_instrument.user = user
     @user_instrument.instrument = instrument
-    @user_instrument.ability = (rand(5) + 1).to_s
     @user_instrument.save
     puts "#{user.first_name} is now on #{@user_instrument.instrument.name}!"
   end

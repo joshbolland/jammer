@@ -21,13 +21,13 @@
                 <% unless slot.user == current_user %>
                   <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %>
                 <% end %>
-                <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %></p>
+                <%= link_to "Delete Slot", slot_path(slot), method: :delete, method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %></p>
             <% else %>
               <p><%= slot.instrument.name %>
                 <%= link_to "Take this slot", slot_requests_path(slot, request: { status: "accepted" }), method: :post, class: "custom-file-upload" %> |
-                <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "custom-file-upload" %> </p><br>
+                <%= link_to "Delete Slot", slot_path(slot), method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %> </p><br>
             <% end %>
-
+      
           <% else %>
             <% if slot.user %>
               <p>
