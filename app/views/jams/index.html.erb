@@ -1,4 +1,3 @@
-
   <div class="search-bar">
     <h2>Find jams in your area</h2>
       <%= form_tag jams_path, method: :get, :class => "form-group row" do %>
@@ -23,15 +22,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-12">
           <div class="title">
-            <% if @jams.count == 1 && @location.present? %>
-              <h3> <%= @jams.count %> jam available in <%= @location %>: </h3>
-            <% elsif @jams.count == 1 && @location.blank? %>
-              <h3> <%= @jams.count %> jam available: </h3>
-            <% elsif @jams.count != 1 && @location.present? %>
-              <h3> <%= @jams.count %> jams available in <%= @location %>: </h3>
-            <% elsif @jams.count != 1 && @location.blank? %>
-              <h3> <%= @jams.count %> jams available: </h3>
-            <% end %>
+            <%= render 'jam_results' %>
           </div>
         </div>
 

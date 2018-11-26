@@ -4,18 +4,18 @@ class JamsController < ApplicationController
   def index
     @location = params[:location]
     if params[:location].present?
-      instrument = Instrument.find(params[:instrument])
-      @jams = Jam.where.not(latitude: nil, longitude: nil).near(params[:location], 10).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+      @instrument = Instrument.find(params[:instrument])
+      @jams = Jam.where.not(latitude: nil, longitude: nil).near(params[:location], 10).select { |jam| jam.slots.any? { |slot| slot.instrument == @instrument } }
       if params[:date].present?
-        instrument = Instrument.find(params[:instrument])
-        @jams = Jam.where.not(latitude: nil, longitude: nil).near(params[:location], 10).where(date: params[:date]).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+        @instrument = Instrument.find(params[:instrument])
+        @jams = Jam.where.not(latitude: nil, longitude: nil).near(params[:location], 10).where(date: params[:date]).select { |jam| jam.slots.any? { |slot| slot.instrument == @instrument } }
       end
     elsif params[:instrument].present?
-      instrument = Instrument.find(params[:instrument])
-      @jams = Jam.where.not(latitude: nil, longitude: nil).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+      @instrument = Instrument.find(params[:instrument])
+      @jams = Jam.where.not(latitude: nil, longitude: nil).select { |jam| jam.slots.any? { |slot| slot.instrument == @instrument } }
       if params[:date].present?
-        instrument = Instrument.find(params[:instrument])
-        @jams = Jam.where.not(latitude: nil, longitude: nil).where(date: params[:date]).select { |jam| jam.slots.any? { |slot| slot.instrument == instrument } }
+        @instrument = Instrument.find(params[:instrument])
+        @jams = Jam.where.not(latitude: nil, longitude: nil).where(date: params[:date]).select { |jam| jam.slots.any? { |slot| slot.instrument == @instrument } }
       end
     else
       @jams = Jam.where.not(latitude: nil, longitude: nil)
