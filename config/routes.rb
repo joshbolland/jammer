@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :slots, only: [:new, :create] do
     end
   end
-  resources :slots, only: :show do
+  resources :slots, only: [:show, :destroy] do
     resources :requests, only: [:new, :create]
   end
   resources :requests, only: [:update, :destroy]

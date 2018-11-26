@@ -13,6 +13,12 @@ class SlotsController < ApplicationController
     redirect_to jam_path(@jam)
   end
 
+  def destroy
+    @slot = Slot.find(params[:id])
+    @slot.destroy
+    redirect_to jam_path(@slot.jam)
+  end
+
   private
 
   def slot_params
