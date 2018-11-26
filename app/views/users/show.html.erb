@@ -40,7 +40,9 @@
           <hr>
           <h3>My Requests</h3>
           <% @personal_requests.each do |request| %>
-            <p><%= request.slot.jam.title %> | <em><%= request.slot.jam.location %></em> | <%= request.slot.jam.date %> | <%= link_to "Details", jam_path(request.slot.jam), class: "custom-file-upload" %></p><br><br>
+            <%= request.slot.jam.title %> | <em><%= request.slot.jam.location %></em> | <%= request.slot.jam.date %> | <%= request.message %> <br>
+            <%= link_to "Details", jam_path(request.slot.jam), class: "custom-file-upload" %> |
+            <%= link_to "Cancel", request_path(request), method: :delete, data: { confirm: "Your request will be cancelled. Do you want to continue?" },class: "custom-file-upload" %><br><br>
           <% end %>
         <% end %>
         <%= link_to "Edit Profile", edit_user_registration_path(@user), class: "button_primary" if @user == current_user %>
