@@ -19,7 +19,7 @@ class RequestsController < ApplicationController
       render :new
     end
   end
-  
+
   def update
     @request = Request.find(params[:id])
 
@@ -29,6 +29,15 @@ class RequestsController < ApplicationController
 
     @request.update(status: params[:status])
     redirect_to user_path(@request.slot.jam.user)
+  end
+
+  def destroy
+    @request = Request.find(params[:id])
+    @request.destroy
+    respond_to do |format|
+      format.html { redirect_to user_path(@request.slot.jam.user), notice: "Your request was cancelled."}
+      format.json { head :no_content }
+    end
   end
 
   private
