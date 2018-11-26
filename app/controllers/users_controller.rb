@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
   def index
     @users = User.all
   end
@@ -7,7 +9,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @user_instrument = UserInstrument.new
-    @available_instruments = Instrument.all - current_user.instruments
+
+    if @user == current_user
+      @available_instruments = Instrument.all - current_user.instruments
+    else
+      @available_instruments = Instrument.all
+    end
 
     @hosted_jams = @user.jams
 
