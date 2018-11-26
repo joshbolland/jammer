@@ -8,7 +8,7 @@
           <h4>Find your future bandmates</h4>
           <%= form_tag jams_path, class: "form-group", method: :get do %>
           <p>Instrument</p>
-          <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "fancy-form"%>
+          <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "select2 fancy-form"%>
           <p>WHERE</p>
           <%= text_field_tag :location, params[:location], class: "fancy-form", id: "jam_location" %>
           <p>WHEN</p>
