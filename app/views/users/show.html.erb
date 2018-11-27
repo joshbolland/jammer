@@ -1,23 +1,64 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="profilecard">
-        <%= render 'avatar_name' %> 
 
-        <%= render 'instrument_list' %> 
-        <%= render 'instrument_selector' %> 
-
-        <%= render 'about' %> 
-
-        <%= render 'hosted_jams' %> 
-        
-        <%= render 'confirmed_slots' %> 
-
-        <%= render 'pending_requests_to_user' %> 
-        <%= render 'personal_requests_from_user' %> 
-
-        <%= render 'edit_profile_button' %> 
+  <div class="profile text-center">
+    <div class="user-info">
+      <div class="user-info-content">
+        <%= render 'avatar_name' %>
+        <%= render 'instrument_list' %>
+        <%= render 'instrument_selector' %>
+        <%= render 'about' %>
+        <%= render 'edit_profile_button' %>
+      </div>
+    </div>
+    <div class="tab-section">
+      <div class="tab-section-content">
+        <% if @user == current_user %>
+          <ul class="tab-nav">
+            <li>
+              <a class="button active" href="#one">Jams I'm hosting</a>
+            </li>
+            <li>
+              <a class="button" href="#two">Pending jammers requests</a>
+            </li>
+            <li>
+              <a class="button" href="#three">Jams I'm playing</a>
+            </li>
+            <li>
+              <a class="button" href="#four">Requests I made</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="one">
+              <%= render 'hosted_jams' %>
+            </div>
+            <div class="tab-pane" id="two">
+              <%= render 'pending_requests_to_user' %>
+            </div>
+            <div class="tab-pane" id="three">
+              <%= render 'confirmed_slots' %>
+            </div>
+            <div class="tab-pane" id="four">
+              <%= render 'personal_requests_from_user' %>
+            </div>
+          </div>
+        <% else %>
+          <ul class="tab-nav">
+            <li>
+              <a class="button active" href="#one">Jams I'm hosting</a>
+            </li>
+            <li>
+              <a class="button" href="#three">Jams I'm playing</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="one">
+              <%= render 'hosted_jams' %>
+            </div>
+            <div class="tab-pane" id="three">
+              <%= render 'confirmed_slots' %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
+
