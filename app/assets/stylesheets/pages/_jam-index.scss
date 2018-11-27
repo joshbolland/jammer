@@ -3,25 +3,26 @@
   margin: 15px 150px 15px 190px;
 }
 .content {
-  display: flex;
+  // display: flex;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
 .cards-container {
   display: flex;
-  width: 700px;
+  width: auto;
 }
 #map {
-  flex: 1 0 50%;
+  // flex: 1 0 50%;
   height: 550px;
+  width: 650px;
   position: sticky !important;
   top: 40px;
+  right: 40px;
   margin-right: 30px;
   margin-top: 40px;
-  border: 15px solid white;
   border-radius: 4px;
-  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+  box-shadow: 0 0 25px #b1b1b1;
 }
 .title {
   margin-left: 25px;
@@ -29,45 +30,12 @@
 .fa-map-marker-alt {
   font-size: 14px;
 }
-.result-card {
-  height: 225px;
-  width: 600px;
-  background-color: white;
-  color: #484848;
-  position: relative;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
-}
-.result-image {
-  position: absolute;
-  left: 30px;
-  top: 20px;
-}
-.result-img {
-  box-shadow: 1px 1px 1px 1px rgba(36, 32, 56, 0.1);
-  border-radius: 2px;
-}
-.result-description {
-  position: absolute;
-  top: 10px;
-  left: 240px;
-  font-size: 16px;
-  opacity: 0.9;
-}
-.result-description h3 {
-  font-size: 20px;
-}
-.result-button {
-  position: absolute;
-  right: 30px;
-  bottom: 20px;
-}
+
 .search-button {
   margin-left: -70px;
   padding-top: 3px;
 }
+
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -87,4 +55,124 @@
 
 .form-control .ap-input {
   width: 300px;
+}
+
+.jam-photo-clipped {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 4px 0px 0px 4px;
+  -webkit-clip-path: polygon(0px 0px, 0px 360px, 200px 0px, 0px 0px);
+  z-index: 100;
+}
+// .flex-card {
+//   display: flex;
+// }
+.flex-card-column {
+
+  flex-direction: column;
+  justify-content: space-around;
+}
+.position-left {
+  position: absolute;
+  left: 100px;
+}
+
+.jam-card {
+
+  height: 200px;
+  width: 600px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
+  position: relative;
+  margin: 20px;
+  border-radius: 4px;
+  // z-index: -100;
+  font-family: raleway;
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin: 5px 5px 4px 5px;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 5px;
+  }
+}
+
+.datetime {
+  position: absolute;
+  right: 5px;
+}
+
+.jam-location {
+  position: absolute;
+  bottom: 5px;
+  left: 230px;
+}
+
+.jam-info {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
+
+.jam-title {
+  position: absolute;
+  top: 9px;
+  left: 230px;
+}
+
+.jam-slots {
+  position: absolute;
+  top: 50px;
+  left: 230px;
+  h3 {
+    margin-top: 10px;
+  }
+
+  h4 {
+    font-size: 10px;
+  }
+}
+
+.slot-info {
+  color: darkgrey;
+  font-size: 12px;
+  a{
+    color: darkgrey;
+    text-decoration: none;
+  }
+}
+
+.available-slot {
+  a {
+  font-size: 12px;
+  color: green;
+  text-decoration: none;
+  }
+}
+.card-header {
+  background-color: white;
+  height: 51px;
+  width: 100%;
+  border-radius: 0px 4px 0px 4px;
+}
+
+.card-footer {
+  background-color: #F6F7F9;
+  height: 35px;
+  width: 100%;
+  border-radius: 0px 0px 4px 0px;
+  z-index: 50;
+  position: relative;
+  top: 114px;
 }

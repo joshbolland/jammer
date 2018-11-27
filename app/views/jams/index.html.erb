@@ -1,61 +1,38 @@
-  <div class="search-bar">
-    <h2>Find jams in your area</h2>
-      <%= form_tag jams_path, method: :get, :class => "form-group row" do %>
-        <div class="col-md-2">
-          <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "form-control" %>
-        </div>
-        <div class="col-md-4">
-          <%= text_field_tag :location, params[:location], placeholder: 'Where', class: "form-control", id: "jam_location" %>
-        </div>
-        <div class="col-md-3">
-          <%= text_field_tag :date, params[:date], placeholder: 'When?', class: "form-control datepicker" %>
-        </div>
-        <div class="col-md-3 search-button">
-          <%= render 'shared/little_search_button', class: "little-search-primary"%>
-        </div>
-      <% end %>
+<div class="search-bar">
+  <h2>Find jams in your area</h2>
+  <%= form_tag jams_path, method: :get, :class => "form-group row" do %>
+  <div class="col-md-2">
+    <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "form-control" %>
   </div>
+  <div class="col-md-4">
+    <%= text_field_tag :location, params[:location], placeholder: 'Where', class: "form-control", id: "jam_location" %>
+  </div>
+  <div class="col-md-3">
+    <%= text_field_tag :date, params[:date], placeholder: 'When?', class: "form-control datepicker" %>
+  </div>
+  <div class="col-md-3 search-button">
+    <%= render 'shared/little_search_button', class: "little-search-primary"%>
+  </div>
+  <% end %>
+</div>
 
 
-  <div class="content">
-    <div class="cards-container">
-      <div class="row">
-        <div class="col-xs-12 col-md-12">
-          <div class="title">
-            <%= render 'jam_results' %>
-          </div>
+<div class="content">
+  <div class="cards-container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="title">
+          <%= render 'jam_results_title' %>
         </div>
+      </div>
 
-        <% @jams.each do |jam| %>
-          <div class="col-xs-12 col-md-12">
-            <div class="result-card">
-              <div class="result-image">
-                <% if jam.photo.blank? %>
-                  <%= cl_image_tag("lbf9irqu7pjyp0zaow8h",
-                    width: 180, height: 180, crop: :fill) %>
-                <% else %>
-                  <%= cl_image_tag jam.photo, width: 180, height: 180, crop: :fill, class: "result-img" %>
-                <% end %>
-              </div>
-              <div class="result-description">
-                <h3> <%= jam.title %> | <i class="fas fa-map-marker-alt"></i></i> <%= jam.location %> </h3>
-                <p> When: <%= jam.date %> </p>
-                <p> Available slots: </p>
-                <p> | <% jam.slots.each do |slot| %>
-                  <%= slot.instrument.name %> |
-                <% end %> </p>
-              </div>
-              <div class="result-button">
-              <%= link_to 'More info', jam, class: "button_primary" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
+      <div class="col-xs-12 col-md-12">
+        <%= render 'jam_results_cards' %>
       </div>
     </div>
     <div
     id="map"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+</div>

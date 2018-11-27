@@ -1,0 +1,13 @@
+<% jam.slots.each do |slot| %>
+  <% if slot.instrument.name == 'Lead Guitar' %>
+    <i class="flaticon-guitar"></i>
+  <% elsif slot.instrument.name == 'Bass Guitar' %>
+    <i class="flaticon-music"></i>
+  <% elsif slot.instrument.name == 'Vocals' %>
+    <i class="flaticon-speaker"></i>
+  <% elsif slot.instrument.name == 'Drums' %>
+    <i class="flaticon-drum"></i>
+  <% elsif slot.instrument.name == 'Keys' %>
+    <i class="flaticon-piano"></i>
+  <% end  %>
+<% end %>
