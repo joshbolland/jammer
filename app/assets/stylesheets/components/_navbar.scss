@@ -84,3 +84,13 @@
   border-left: 1px solid $jammer-white;
   border-top: 1px solid $jammer-white;
 }
+
+.homepage-link-color {
+  color: $jammer-purple;
+  font-weight: bold;
+}
+
+.homepage-link-color:hover {
+  color: $jammer-blue;
+  font-weight: bold;
+}

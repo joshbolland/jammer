@@ -20,7 +20,7 @@
         </div> -->
 
       <div class="svg-wrapper">
-        <%= link_to new_jam_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to new_jam_path, class: "navbar-wagon-item navbar-wagon-link #{params[:action] == "home" ? 'homepage-link-color' : ''}" do %>
           <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
             <rect id="shape" height="40" width="90"/>
             <div id="text_logged_out">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="svg-wrapper">
-        <%= link_to jams_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to jams_path, class: "navbar-wagon-item navbar-wagon-link #{params[:action] == "home" ? 'homepage-link-color' : ''}" do %>
           <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
             <rect id="shape" height="40" width="90"/>
             <div id="text_logged_out">
@@ -41,7 +41,7 @@
         <% end %>
       </div>
       <div class="svg-wrapper">
-        <%= link_to destroy_user_session_path, method: "delete", class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to destroy_user_session_path, method: "delete", class: "navbar-wagon-item navbar-wagon-link #{params[:action] == "home" ? 'homepage-link-color' : ''}" do %>
           <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
             <rect id="shape" height="40" width="90"/>
             <div id="text_logged_out">
@@ -57,7 +57,7 @@
   <% else %>
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <div class="svg-wrapper">
-        <%= link_to new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to new_user_session_path, class: "navbar-wagon-item navbar-wagon-link #{params[:action] == "home" ? 'homepage-link-color' : ''}" do %>
           <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
             <rect id="shape" height="40" width="90"/>
             <div id="text_logged_out">
@@ -67,7 +67,7 @@
         <% end %>
       </div>
       <div class="svg-wrapper">
-        <%= link_to new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= link_to new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link #{params[:action] == "home" ? 'homepage-link-color' : ''}" do %>
           <svg height="40" width="90" xmlns="http://www.w3.org/2000/svg">
             <rect id="shape" height="40" width="90" />
             <div id="text_logged_out">
