@@ -9,6 +9,20 @@
   margin-top: -80px;
 }
 
+.flex {
+  display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  p {
+    margin: 0;
+  }
+}
+
+.flexbox-edit {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .new-jam-form {
   height: auto;
   width: 650px;
@@ -38,6 +52,12 @@
     color: $jammer-black;
   }
 }
+
+.form-inputs-edit {
+  width: 100%;
+  margin-left: -2px;
+}
+
 
 #image-next-to-form {
   width: 65%;
@@ -272,4 +292,13 @@
     margin-left: 125px;
   }
 
+}
+
+.delete-button-position {
+    margin-bottom: -20px;
+    margin-left: 232px;
+}
+
+.update-button-position {
+  margin-bottom: 67px;
 }
