@@ -89,8 +89,11 @@ assign_instrument(@instruments.fifth, 8, 9)
 
 # Seed jams
 db_seed('jam01.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Winnie").first) }
+sleep 5
 db_seed('jam02.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Lou").first) }
+sleep 5
 db_seed('jam03.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Mabel").first) }
+sleep 5
 db_seed('jam04.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Max").first) }
 
 # Assign slots to jams
