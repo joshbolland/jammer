@@ -64,7 +64,7 @@
   height: 200px;
   border-radius: 4px 0px 0px 4px;
   -webkit-clip-path: polygon(0px 0px, 0px 360px, 200px 0px, 0px 0px);
-  z-index: 0;
+  z-index: 100;
 }
 // .flex-card {
 //   display: flex;
@@ -89,7 +89,7 @@
   position: relative;
   margin: 20px;
   border-radius: 4px;
-  z-index: -100;
+  // z-index: -100;
   font-family: raleway;
   h1 {
     font-size: 22px;
@@ -145,9 +145,10 @@
 }
 
 .slot-info {
+  color: darkgrey;
   font-size: 12px;
   a{
-    color: black;
+    color: darkgrey;
     text-decoration: none;
   }
 }
@@ -160,10 +161,10 @@
   }
 }
 .card-header {
-  background-color: #F6F7F9;
+  background-color: white;
   height: 51px;
   width: 100%;
-  border-radius: 0px 4px 0px 0px;
+  border-radius: 0px 4px 0px 4px;
 }
 
 .card-footer {
@@ -171,7 +172,7 @@
   height: 35px;
   width: 100%;
   border-radius: 0px 0px 4px 0px;
-  z-index: -50;
+  z-index: 50;
   position: relative;
   top: 114px;
 }
