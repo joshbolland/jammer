@@ -1,18 +1,20 @@
-<% if @user.instruments.size > 0 %>
-  <h6>
-    <% @user.instruments.each do |instrument| %>
-      <% instrument.name %>
-        <% if instrument.name == 'Lead Guitar' %>
-          <i class="flaticon-guitar"></i>
-        <% elsif instrument.name == 'Bass Guitar' %>
-          <i class="flaticon-music"></i>
-        <% elsif instrument.name == 'Vocals' %>
-          <i class="flaticon-speaker"></i>
-        <% elsif instrument.name == 'Drums' %>
-          <i class="flaticon-drum"></i>
-        <% elsif instrument.name == 'Keys' %>
-          <i class="flaticon-piano"></i>
-        <% end  %>
-    <% end %>
-  </h6>
-<% end %>
+<div class="instrument_list">
+  <% if @user.instruments.size > 0 %>
+    <h6>
+      <% @user.instruments.each do |instrument| %>
+        <% instrument.name %>
+          <% if instrument.name == 'Lead Guitar' %>
+            <i class="flaticon-guitar"></i>
+          <% elsif instrument.name == 'Bass Guitar' %>
+            <i class="flaticon-music"></i>
+          <% elsif instrument.name == 'Vocals' %>
+            <i class="flaticon-speaker"></i>
+          <% elsif instrument.name == 'Drums' %>
+            <i class="flaticon-drum"></i>
+          <% elsif instrument.name == 'Keys' %>
+            <i class="flaticon-piano"></i>
+          <% end  %>
+      <% end %>
+    </h6>
+  <% end %>
+</div>

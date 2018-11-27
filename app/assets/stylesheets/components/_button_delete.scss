@@ -1,0 +1,54 @@
+   #holder{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    width: 250px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-65%);
+    border-radius: 2px;
+  }
+  .button-delete {
+    background: #7f51ff;
+    width: 156px;
+    overflow: hidden;
+    text-align: center;
+    transition: .2s;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+  .btnTwo {
+    position : relative;
+    width : 175px;
+    height : 100px;
+    margin-top: -100px;
+    padding-top: 2px;
+    background : $jammer-hover-purple;
+    left : -250px;
+    transition : .4s;
+  }
+  .btnText {
+    color : white;
+    transition : .3s;
+    padding: 7px;
+    font-size: 12px;
+  }
+  .btnText2 {
+    margin-top : 55px;
+    margin-right : -110px;
+    color : #FFF;
+    padding: 17px;
+    font-size: 16px;
+  }
+  .button-delete:hover .btnTwo{ /*When hovering over .button change .btnTwo*/
+    left: -110px;
+  }
+  .button-delete:hover .btnText{ /*When hovering over .button change .btnText*/
+    margin-left : 65px;
+    text-decoration: none;
+  }
+  .button-delete:active { /*Clicked and held*/
+    box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+  }
