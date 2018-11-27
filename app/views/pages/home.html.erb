@@ -1,28 +1,9 @@
-<div class="banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 ">
-        <div class="home-search">
-          <h4>Find your future bandmates</h4>
-          <%= form_tag jams_path, class: "form-group", method: :get do %>
-          <p>INSTRUMENT</p>
-          <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "select2 fancy-form"%>
-          <p>WHERE</p>
-          <%= text_field_tag :location, params[:location], class: "fancy-form", id: "jam_location" %>
-          <p>WHEN</p>
-          <%= text_field_tag :date, params[:date], class: "fancy-form datepicker white-box" %>
-          <br><br>
-            <%= render 'shared/search_button', class: "button_primary" %>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
-        <div id="home-title">
-          <h1>Jammer</h1>
-          <p>Connecting Musicians</p>
-        </div>
-      </div>
-    </div>
+<div id="home-container">
+  <div class="home-title">
+    <%= render 'title' %>
+  </div>
+  <div class="home-search">
+    <%= render 'search' %>
   </div>
 </div>
 
