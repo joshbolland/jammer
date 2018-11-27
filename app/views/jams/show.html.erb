@@ -27,7 +27,7 @@
                 <%= link_to "Take this slot", slot_requests_path(slot, request: { status: "accepted" }), method: :post, class: "custom-file-upload" %> |
                 <%= link_to "Delete Slot", slot_path(slot), method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %> </p><br>
             <% end %>
-      
+
           <% else %>
             <% if slot.user %>
               <p>
