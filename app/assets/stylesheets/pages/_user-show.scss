@@ -97,7 +97,7 @@
   display: grid;
 }
 .user-info {
-  width: 400px;
+
 }
 .user-info-content  {
   h1 {
@@ -289,12 +289,12 @@
     }
   }
   .add-instrument {
-    position: absolute;
-    top: 93px;
-    right: 22px;
-    text-align: left;
+    flex: 0 0 30%;
+    padding-bottom: 0;
+    margin: 6px;
+    margin-left: 0px;
     .button_primary {
-      width: 100px;
+      width: 100%;
       font-size: 12px;
       border: 1px solid #7F5FF7;
     }
@@ -358,13 +358,14 @@
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  padding-left: 0px;
-  width: 322px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4px 0;
+
 }
 .grid-item {
   text-align: center;
+  width: 100px;
   margin: 6px;
   margin-left: 0px;
   padding: 5px;
@@ -376,3 +377,4 @@
   background: #FFFFFF;
   border: 2px solid #7F5FF7;
 }
+
