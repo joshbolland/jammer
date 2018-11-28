@@ -1,71 +1,139 @@
+demo_user:
+  email: "demo@demo.com"
+  password: "password"
+  first_name: Jesse
+  last_name: Cole
+  bio: I've been playing bass guitar for a couple years on and off and am excited to be
+       playing with other people. I have already hosted a couple jams and it's gone really well. We played one
+       time in a basement, another time in a rehearsal studio. It's been great to meet people and get some
+       creative juices flowing.
+       I'm love making connections with people that are music related. My favourite
+       bands at the moment are Cut Worms and The Growlers and my genre of choice is indie rock but I'll go with almost anything!
+       Join my jam fam!
+  remote_photo_url: https://randomuser.me/api/portraits/women/4.jpg
+
 generic_user00:
   email: "gen00@demo.com"
   password: "password"
-  first_name: "Die"
-  last_name: "Anna"
-  bio: "Internet advocate. Certified travel scholar. Friendly student. Pop culture fan."
+  first_name: "Diane"
+  last_name: "Fischer"
+  bio: "I'm a pop culture fan who loves a good night on the town listening to live music and DJ sets.
+        One day i hope to become a pop star. I'm a singer, even though it's mostly in the shower... but I'd like
+        to take it to the next level! Finding Jammer has been a gift from above."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-22.jpg"
 generic_user01:
   email: "gen01@demo.com"
   password: "password"
-  first_name: "Max"
-  last_name: "Damage"
-  bio: "Pop culture maven. Analyst. Writer. Wannabe food evangelist. Organizer. Friendly internet lover. Incurable troublemaker. Entrepreneur."
+  first_name: "Henry"
+  last_name: "Lutz"
+  bio: "I'm in a dead end job and I need some music peeps in my life. I've been playing guitar on and off for 5 years
+        and have always had trouble finding people to jam with. I was in a band back in high school for a bit but
+        we didn't play as much as I would've liked to. Genre of choice is heavy metal, I hope there's some metal
+        enthusiasts I can jam with and maybe even be friends with haha!"
   remote_photo_url: "https://pbs.twimg.com/profile_images/999738241942212609/QrZO-QjT.jpg"
 generic_user02:
   email: "gen02@demo.com"
   password: "password"
-  first_name: "Winnie"
-  last_name: "Bago"
-  bio: "Hipster-friendly zombie geek. Alcoholic. Music enthusiast. Lifelong writer. Devoted tv scholar."
+  first_name: "Daniella"
+  last_name: "Lin"
+  bio: "I'm tired of playing alone in my mom's basement. I play drums and would like to transition to someone else's basement
+        to do the same thing but with other people. I'm tired of being a musical loner! Genre of choice would be
+        rock but I'm flexible. I've never played with others before so anyone else out there who is a bit shy but with
+        some experience would be ideal."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-8.jpg"
 generic_user03:
   email: "gen03@demo.com"
   password: "password"
-  first_name: "Dr."
+  first_name: "Dr. Phay"
   last_name: "Phe"
-  bio: "I'm representing for them gangstas all across the world. Still hitting them corners in them lo-lo's, girl (Still taking my time to perfect the beat And I still got love for the streets, it's the P-H-E)"
+  bio: "I am straight up heavy metal all the way. I rock out on the drums. I'm not exactly advanced but I do play hard enough
+        that I'm buying new sticks every week! So if you think you can handle that then I am the guy to jam with."
   remote_photo_url: "https://avatars3.githubusercontent.com/u/20525002?s=460&v=4"
 generic_user04:
   email: "gen04@demo.com"
   password: "password"
   first_name: "Di"
-  last_name: "O' Bolic"
-  bio: "General beer trailblazer. Award-winning bacon scholar. Internet buff. Alcohol fan. Typical tv junkie. Twitter nerd."
+  last_name: "Franks"
+  bio: "I go to gigs all the time and have decided it's time for me to get up on that stage and have people crowd surfing to
+        stuff that I play.  I've taken up keys because I used to play piano back in the day so feel that'd be easiest to
+        start off with. I'm not the most experienced but I am looking to be in a band. Hopefully play some soulful stuff in any
+        venue really. Join my jam if you crave these things too!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-73.jpg"
 generic_user05:
   email: "gen05@demo.com"
   password: "password"
   first_name: "Cam"
-  last_name: "Payne"
-  bio: "Certified music lover. Typical creator. Lifelong pop culture guru. Social media ninja."
+  last_name: "Pearson"
+  bio: "Certified music lover. I write my own songs and consider myself as somewhat of a singer song-writer connoisseur.
+        Maybe the next Ed Sheeran but cooler. I've never played live and that would be the dream. Also looking forward to
+        meeting people similar to me as I don't have any friends who like music like I do."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-41.jpg"
 generic_user06:
   email: "gen06@demo.com"
   password: "password"
   first_name: "Mabel"
-  last_name: "Syrup"
-  bio: "Lifelong explorer. Tv guru. Hipster-friendly coffee advocate. Infuriatingly humble food fan."
+  last_name: "Siha"
+  bio: "In my spare time I enjoy long walks on the beach playng the bongos by the sea. I want to put my skills to the test
+        and jam out with other people. The cameraderie from playing music with others is something I long for. Hopefully we
+        can all find a spiritual connection together through playing music."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-69.jpg"
 generic_user07:
   email: "gen07@demo.com"
   password: "password"
   first_name: "Jim"
-  last_name: "Nasium"
-  bio: "Creator. Amateur travel nerd. Professional internet ninja. Lifelong twitter fanatic. Problem solver."
+  last_name: "Naffari"
+  bio: "I'm currently unemployed and looking for things to do with my time. Jamming out with people is exactly what I need to
+        get me out of my house and do something fun and productive. Maybe even a career could spawn from it, who knows.
+        My focus for the moment is to play guitar with musically like-minded people. If i was to choose a genre to play it'd be rock.
+        My favourite band is the pixies, I've seen them 5 times and they are who I aspire to be."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/marvell.png"
 generic_user08:
   email: "gen08@demo.com"
   password: "password"
   first_name: "Marsha"
-  last_name: "Mellow"
-  bio: "Professional travelaholic. Writer. Amateur analyst. Zombie advocate. Unapologetic music fanatic."
+  last_name: "Haley"
+  bio: "I play keys and classical piano. I love a lot of different genres but lately I've been very keen on classical. I'm
+        looking for other classical music enthusiasts to jam with. I have never played with other people before and don't know
+        exactly how it'd go but excited to find out. I've been playing for a few years now and am confident enough to take it to the
+        next level!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-65.jpg"
 generic_user09:
   email: "gen09@demo.com"
   password: "password"
   first_name: "Lou"
-  last_name: "Pole"
-  bio: "Award-winning tv expert. Beer enthusiast. Proud bacon ninja. Travel aficionado. Zombie advocate."
+  last_name: "Vaughan"
+  bio: "I was a singer in a band but got kicked out for the lead guitarist's girlfriend to take my place. It was pretty brutal
+        and did not end on good terms...so I want to get back to the joy of playing music with others. Maybe another band could
+        rise from the ashes that are my life right now. Jammer is the perfect opportunity to casually get back into playing music.
+        I hope you join my jam!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-33.jpg"
+
+  generic_user10:
+  email: "gen09@demo.com"
+  password: "password"
+  first_name: "Frederick"
+  last_name: "Johnson"
+  bio: "I play bass guitar and am looking for a lead guitar and a drummer to complete me. Playing bass is fun but there's only so much
+        I can play solo with it. I want to feel complete and jamming with others is hopefully the way to do that. I'm
+        flexible with genres but NO metal for me. It's too much for my ears if you get me. Marshay favourite band is Parquet Courts
+        if that gives any indication to what style I might want to jam to. It is post punkm type of thing, but equally I'm
+        a big fan of Velvet Undergound."
+  remote_photo_url: "https://tinyfac.es/data/avatars/7D3FA6C0-83C8-4834-B432-6C65ED4FD4C3-500w.jpeg"
+  generic_user11:
+  email: "gen09@demo.com"
+  password: "password"
+  first_name: "Estelle"
+  last_name: "Dean"
+  bio: "Not only is playing music a huge passion but also talking about it and being immersed in the music scene. I eat
+        breathe and sleep music. A bit of an obsession. I dabble in most instruments but my main thing is lead guitar.
+        I'm looking for people to share this passion with and get creative. I'm young wild and free, I hope you join me."
+  remote_photo_url: "https://randomuser.me/api/portraits/women/91.jpg"
+  generic_user12:
+  email: "gen09@demo.com"
+  password: "password"
+  first_name: "Pedro"
+  last_name: "Burris"
+  bio: "Psychadelic music is my thing. I love a good disco ball hanging from the ceiling and my garage has been lonely with
+        just me on my guitar. I also sing so am flexible with what role I'd play in a jam session. Come make my garage less lonely!"
+  remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-104.jpg"
 
