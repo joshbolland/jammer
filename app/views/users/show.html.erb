@@ -9,7 +9,6 @@
           <%= render 'avatar_pic' %>
         </div>
         <div class="skills">
-          <%= render 'instrument_list' %>
           <%= render 'instrument_selector' %>
         </div>
         <div class="about">
@@ -26,7 +25,7 @@
               <a class="button active" href="#one">Jams I'm hosting</a>
             </li>
             <li>
-              <a class="button" href="#two">Pending jammers requests</a>
+              <a class="button" href="#two">Pending requests</a>
             </li>
             <li>
               <a class="button" href="#three">Jams I'm playing</a>
@@ -52,10 +51,10 @@
         <% else %>
           <ul class="tab-nav">
             <li>
-              <a class="button active" href="#one">Jams I'm hosting</a>
+              <a class="button active" href="#one">Jams <%= @user.first_name %> hosting</a>
             </li>
             <li>
-              <a class="button" href="#three">Jams I'm playing</a>
+              <a class="button" href="#three">Jams <%= @user.first_name %>  playing in</a>
             </li>
           </ul>
           <div class="tab-content">

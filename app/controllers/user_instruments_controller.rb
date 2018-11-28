@@ -6,10 +6,13 @@ class UserInstrumentsController < ApplicationController
   end
 
   def create
-    @user_instrument = UserInstrument.new
-    @user_instrument.user = current_user
-    @user_instrument.instrument = Instrument.find(params[:user_instrument][:instrument_id])
-    @user_instrument.save
+    params[:user_instrument][:instrument_ids].each do |instrument_id|
+      next if instrument_id == ""
+      @user_instrument = UserInstrument.new
+      @user_instrument.user = current_user
+      @user_instrument.instrument = Instrument.find(instrument_id)
+      @user_instrument.save
+    end
     redirect_to user_path(current_user)
   end
 end
