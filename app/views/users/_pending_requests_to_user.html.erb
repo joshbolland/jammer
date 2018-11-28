@@ -21,7 +21,11 @@
       <% end %>
     </div>
     <div class="request-info">
-      <p><%= request.user.first_name %> would like to play <%= request.slot.instrument.name %> at <%= request.slot.jam.title %>.</p>
+      <% if request.slot.instrument.name == "Vocals" %>
+        <p><%= request.user.first_name %> wants to sing at <%= request.slot.jam.title %>.</p>
+      <% else %>
+        <p><%= request.user.first_name %> wants to play <%= request.slot.instrument.name %> at <%= request.slot.jam.title %>.</p>
+      <% end %>
     </div>
     <div class="request-message">
       <p><em>"<%= request.message %>"</em></p>

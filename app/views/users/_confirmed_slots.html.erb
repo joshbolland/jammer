@@ -1,7 +1,77 @@
-<% if @confirmed_slots.size > 0 %>
-  <hr>
-  <h3>Slots I'm Playing</h3>
-  <% @confirmed_slots.each do |slot| %>
-    <p><%= slot.instrument.name %> | <em><%= slot.jam.title %></em> | <%= slot.jam.date %> <%= link_to "Details", jam_path(slot.jam), class: "custom-file-upload" %></p><br><br>
+<% if @hosted_jams.size > 0 && @user == current_user %>
+  <% @hosted_jams.each do |jam| %>
+    <div class="user-jam-card">
+      <%= cl_image_tag jam.photo, height: 130, width: 130, gravity: "auto", crop:"fill", class: "user-jam-photo-clipped" %>
+    <div class='user-jam-title'>
+      <h1><%= jam.title %></h1>
+    </div>
+    <div class='user-jam-card-datetime'>
+      <p><i class="fa fa-calendar-alt"></i> <%= jam.date.strftime("%e %b %Y") %></p>
+      <p><i class="far fa-clock"></i> <%= jam.time.strftime("%l:%M %p") %></p>
+    </div>
+    <div class='user-jam-slots text-left'>
+      <% jam.slots.each do |slot| %>
+      <% if slot.instrument.name == 'Lead Guitar' %>
+      <i class="flaticon-guitar"></i> <span class="user-jam-slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+      <span class="user-available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="user-jam-slot-info">
+        <% if jam.user == slot.user %>
+        <i class="fas fa-crown"></i>
+        <% end %>
+        <%= link_to user_path(slot.user) do %>
+        <%= slot.user.first_name %> <%= slot.user.last_name %>
+        <% end %>
+      </span> <% end %> <br>
+      <% elsif slot.instrument.name == 'Bass Guitar' %>
+      <i class="flaticon-music"></i> <span class="user-jam-slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+      <span class="user-available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="user-jam-slot-info">
+        <% if jam.user == slot.user %>
+        <i class="fas fa-crown"></i>
+        <% end %>
+        <%= link_to user_path(slot.user) do %>
+        <%= slot.user.first_name %> <%= slot.user.last_name %>
+        <% end %>
+      </span> <% end %> <br>
+      <% elsif slot.instrument.name == 'Vocals' %>
+      <i class="flaticon-speaker"></i> <span class="user-jam-slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+      <span class="user-available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="user-jam-slot-info">
+        <% if jam.user == slot.user %>
+        <i class="fas fa-crown"></i>
+        <% end %>
+        <%= link_to user_path(slot.user) do %>
+        <%= slot.user.first_name %> <%= slot.user.last_name %>
+        <% end %>
+      </span> <% end %> <br>
+      <% elsif slot.instrument.name == 'Drums' %>
+      <i class="flaticon-drum"></i> <span class="user-jam-slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+      <span class="user-available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="user-jam-slot-info">
+        <% if jam.user == slot.user %>
+        <i class="fas fa-crown"></i>
+        <% end %>
+        <%= link_to user_path(slot.user) do %>
+        <%= slot.user.first_name %> <%= slot.user.last_name %>
+        <% end %>
+      </span> <% end %> <br>
+      <% elsif slot.instrument.name == 'Keys' %>
+      <i class="flaticon-piano"></i> <span class="user-jam-slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+      <span class="user-jam-slot-info"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="user-jam-slot-info">
+        <% if jam.user == slot.user %>
+        <i class="fas fa-crown"></i>
+        <% end %>
+        <%= link_to user_path(slot.user) do %>
+        <%= slot.user.first_name %> <%= slot.user.last_name %>
+        <% end %>
+      </span> <% end %> <br>
+      <% end  %>
+      <% end %>
+    </div>
+    <div class="user-jam-card-footer">
+      <div class='user-jam-location'>
+        <h3><i class="fas fa-map-marker-alt"></i> <%= jam.location %></h3>
+      </div>
+      <div class='user-jam-info'>
+        <%= link_to 'More info', jam_path(jam), class: "user-more-info-button" %>
+      </div>
+    </div>
+    </div>
   <% end %>
 <% end %>

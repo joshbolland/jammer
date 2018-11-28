@@ -21,7 +21,11 @@
       <% end %>
     </div>
     <div class="request-info">
-      <p>You've asked <%= request.slot.jam.user.first_name %> <%= request.slot.jam.user.last_name %> if you can play <%= request.slot.instrument.name %> at <%= request.slot.jam.title %>.</p>
+      <% if request.slot.instrument.name == "Vocals" %>
+        <p>You've asked <%= request.slot.jam.user.first_name %> <%= request.slot.jam.user.last_name %> if you can sing at <%= request.slot.jam.title %>.</p>
+      <% else %>
+        <p>You've asked <%= request.slot.jam.user.first_name %> <%= request.slot.jam.user.last_name %> if you can play <%= request.slot.instrument.name %> at <%= request.slot.jam.title %>.</p>
+      <% end %>
     </div>
     <div class="request-footer">
       <%= link_to "Cancel Request", request_path(request), method: :delete, class: "decline-button" %>

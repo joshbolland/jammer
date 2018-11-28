@@ -35,7 +35,9 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="one">
-          <%= render 'hosted_jams' %>
+          <div class="requests">
+            <%= render 'hosted_jams' %>
+          </div>
         </div>
         <div class="tab-pane" id="two">
           <div class="cards-container">
@@ -45,10 +47,14 @@
           </div>
         </div>
         <div class="tab-pane" id="three">
-          <%= render 'confirmed_slots' %>
+          <div class="requests">
+            <%= render 'confirmed_slots' %>
+          </div>
         </div>
         <div class="tab-pane" id="four">
+          <div class="requests">
           <%= render 'personal_requests_from_user' %>
+          </div>
         </div>
       </div>
       <% else %>
