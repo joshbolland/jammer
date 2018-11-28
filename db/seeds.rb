@@ -40,12 +40,14 @@ end
 # Seed one instrument
 def create_a_seed_instrument(attributes)
   Instrument.create!(attributes)
+  @instruments << Instrument.last
   puts "Created #{Instrument.last.name}."
 end
 
 # Seed one user
 def create_a_seed_user(attributes)
   User.create!(attributes)
+  @users << User.last
   puts "Created #{User.last.first_name}."
 end
 
@@ -69,33 +71,23 @@ def assign_instrument(instrument, index_array)
 end
 
 # Begin Seeding
-Nuke everything
+# Nuke everything
 wipe_db
 
 # Seed instruments
-db_seed('instruments.yml') { |attributes| create_a_seed_instrument(attributes) }
-instruments_collection = Instrument.all
 @instruments = []
-# need to do this as arrays are easier to work with in this context 
-instruments_collection.each do |instrument|
-  @instruments << user
-end
+db_seed('instruments.yml') { |attributes| create_a_seed_instrument(attributes) }
 
 # Seed users
-db_seed('users.yml') { |attributes| create_a_seed_user(attributes) }
-users_collection = User.all
 @users = []
-# need to do this as arrays are easier to work with in this context 
-users_collection.each do |user|
-  @users << user
-end
+db_seed('users.yml') { |attributes| create_a_seed_user(attributes) }
 
 # Assign instruments to users
-assign_instrument(@instruments[0], []) # lead guitar
-assign_instrument(@instruments[1], []) # bass guitar
-assign_instrument(@instruments[2], []) # drums
-assign_instrument(@instruments[3], []) # vocals
-assign_instrument(@instruments[4], []) # keys
+assign_instrument(@instruments[0], [2, 8, 12, 13]) # lead guitar
+assign_instrument(@instruments[1], [0, 11]) # bass guitar
+assign_instrument(@instruments[2], [3, 4, 7]) # drums
+assign_instrument(@instruments[3], [1, 6, 9, 10]) # vocals
+assign_instrument(@instruments[4], [5]) # keys
 
 # Seed jams
 # db_seed('jam01.yml') { |attributes| create_a_jam(attributes, User.where(first_name: "Winnie").first) }
