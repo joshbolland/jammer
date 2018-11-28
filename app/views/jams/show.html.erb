@@ -2,51 +2,97 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="profilecard">
-        <h3> <%= @jam.title %> </h3>
-        <%= cl_image_tag @jam.photo,  width: 400, height: 200, crop: :fill, class: "jam-avatar" %>
-        <h3>Details about this jam</h3>
-        <p> Where: <%= @jam.location %> </p>
-        <p> Date: <%= @jam.date %> | Time: <%= @jam.time %> </p>
-        <h3> Description</h3>
-        <p> <%= @jam.description %> </p>
-        <h3>Jammers</h3>
         <% @jam.slots.each do |slot| %>
-          <% if @jam.user == current_user %>
-            <% if slot.user != nil %>
-              <p>
-                <% if @jam.user == slot.user %>
-                  <i class="fas fa-crown"></i>
-                <% end %>
-                <%= slot.instrument.name %> | <%= slot.user.first_name %> <%= slot.user.last_name %>
-                <% unless slot.user == current_user %>
-                  <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %>
-                <% end %>
-                <%= link_to "Delete Slot", slot_path(slot), method: :delete, method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %></p>
-            <% else %>
-              <p><%= slot.instrument.name %>
-                <%= link_to "Take this slot", slot_requests_path(slot, request: { status: "accepted" }), method: :post, class: "custom-file-upload" %> |
-                <%= link_to "Delete Slot", slot_path(slot), method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %> </p><br>
+        <div class="slot-request-card">
+          <% if slot.user != nil %>
+          <%= cl_image_tag slot.user.photo, height: 130, width: 130, gravity: "auto", crop:"fill", class: "slot-photo-clipped" %>
+          <div class="user-name">
+            <h1><%= slot.instrument.name %></h1>
+          </div>
+          <div class="request-icon">
+            <% if slot.instrument.name == 'Lead Guitar' %>
+            <i class="flaticon-guitar"></i>
+            <% elsif slot.instrument.name == 'Bass Guitar' %>
+            <i class="flaticon-music"></i>
+            <% elsif slot.instrument.name == 'Vocals' %>
+            <i class="flaticon-speaker"></i>
+            <% elsif slot.instrument.name == 'Drums' %>
+            <i class="flaticon-drum"></i>
+            <% elsif slot.instrument.name == 'Keys' %>
+            <i class="flaticon-piano"></i>
             <% end %>
+          </div>
+          <div class="slot-info">
+              <% if slot.jam.user == current_user %>
+                <% if slot.instrument.name == "Vocals" %>
+                  <p>You are singing at your jam.</p>
+                <% else %>
+                  <p>You are playing <%= slot.instrument.name %> at your jam.</p>
+                <% end %>
+              <% else %>
+                <% if slot.instrument.name == "Vocals" %>
+                  <p><%= link_to user_path(slot.user) do %><%= slot.user.first_name %> <%= slot.user.last_name %><% end %> is singing at this jam.</p>
+                <% else %>
+                  <p><%= link_to user_path(slot.user) do %><%= slot.user.first_name %> <%= slot.user.last_name %><% end %> is playing <%= slot.instrument.name %> at this jam.</p>
+                <% end %>
+              <% end %>
+        </div>
+          <div class="request-footer">
+            <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "jam-slot-delete-button" if slot.jam.user == current_user %>
+          </div>
+        </div>
 
-          <% else %>
-            <% if slot.user %>
-              <p>
-                <% if @jam.user == slot.user %>
-                  <i class="fas fa-crown"></i>
-                <% end %>
-                <%= slot.instrument.name %> | <%= slot.user.first_name %> <%= slot.user.last_name %>
-                <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %></p>
-            <% else %>
-              <p><%= slot.instrument.name %>
-                <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %></p><br>
-            <% end %>
+        <% else %>
+        <%= image_tag("user.png", class: "request-photo-clipped") %>
+        <div class="user-name">
+          <h1><%= slot.instrument.name %></h1>
+        </div>
+        <div class="request-icon">
+          <% if slot.instrument.name == 'Lead Guitar' %>
+          <i class="flaticon-guitar"></i>
+          <% elsif slot.instrument.name == 'Bass Guitar' %>
+          <i class="flaticon-music"></i>
+          <% elsif slot.instrument.name == 'Vocals' %>
+          <i class="flaticon-speaker"></i>
+          <% elsif slot.instrument.name == 'Drums' %>
+          <i class="flaticon-drum"></i>
+          <% elsif slot.instrument.name == 'Keys' %>
+          <i class="flaticon-piano"></i>
           <% end %>
-        <% end %>
-
-        <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
-        <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
-        <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
+        </div>
+        <% if slot.jam.user == current_user %>
+            <div class="request-info">
+            <% if slot.instrument.name == "Vocals" %>
+              <p>No one is singing at your jam yet. There are <%= slot.requests.size %> pending requests for this slot %></p>
+            <% else %>
+              <p>No one is playing <%= slot.instrument.name %> at your jam yet. There are <%= slot.requests.size %> pending requests for this slot.</p>
+            <% end %>
+            </div>
+          <% else %>
+            <div class="request-info">
+              <% if slot.instrument.name == "Vocals" %>
+                <p> No one is singing at this jam yet. Hit the request button below!</p>
+              <% else %>
+                <p> No one is playing <%= slot.instrument.name %> at this jam yet. Hit the request button below!</p>
+              <% end %>
+            </div>
+          <% end %>
+        <div class="request-footer">
+          <% if slot.jam.user == current_user %>
+          <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "jam-slot-delete-button" if slot.jam.user == current_user %>
+          <% else %>
+          <%= link_to "Request Slot", new_slot_request_path(slot), class: "request-slot-button" %>
+          <% end %>
+        </div>
       </div>
+      <% end %>
+      <% end %>
+
+      <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
+      <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
+      <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
     </div>
   </div>
+</div>
+</div>
 </div>
