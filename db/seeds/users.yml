@@ -4,12 +4,8 @@ user00:
   first_name: "Jesse"
   last_name: "Cole"
   bio: "I've been playing bass guitar for a couple years on and off and am excited to be
-       playing with other people. I have already hosted a couple jams and it's gone really well. We played one
-       time in a basement, another time in a rehearsal studio. It's been great to meet people and get some
-       creative juices flowing.
-       I'm love making connections with people that are music related. My favourite
-       bands at the moment are Cut Worms and The Growlers and my genre of choice is indie rock but I'll go with almost anything!
-       Join my jam fam!"
+       playing with other people. I have already hosted a couple jams and it's gone really well.
+       It's been great to meet people and get some creative juices flowing."
   remote_photo_url: "https://randomuser.me/api/portraits/women/4.jpg"
 user01:
   email: "gen00@demo.com"
@@ -55,8 +51,7 @@ user05:
   last_name: "Franks"
   bio: "I go to gigs all the time and have decided it's time for me to get up on that stage and have people crowd surfing to
         stuff that I play.  I've taken up keys because I used to play piano back in the day so feel that'd be easiest to
-        start off with. I'm not the most experienced but I am looking to be in a band. Hopefully play some soulful stuff in any
-        venue really. Join my jam if you crave these things too!"
+        start off with. Hopefully play some soulful stuff in any venue really. Join my jam if you crave these things too!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-73.jpg"
 user06:
   email: "gen05@demo.com"
@@ -83,8 +78,7 @@ user08:
   last_name: "Naffari"
   bio: "I'm currently unemployed and looking for things to do with my time. Jamming out with people is exactly what I need to
         get me out of my house and do something fun and productive. Maybe even a career could spawn from it, who knows.
-        My focus for the moment is to play guitar with musically like-minded people. If i was to choose a genre to play it'd be rock.
-        My favourite band is the pixies, I've seen them 5 times and they are who I aspire to be."
+        My focus for the moment is to play guitar with musically like-minded people. If i was to choose a genre to play it'd be rock."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/marvell.png"
 user09:
   email: "gen08@demo.com"
@@ -102,7 +96,7 @@ user10:
   first_name: "Lou"
   last_name: "Vaughan"
   bio: "I was a singer in a band but got kicked out for the lead guitarist's girlfriend to take my place. It was pretty brutal
-        and did not end on good terms...so I want to get back to the joy of playing music with others. Maybe another band could
+        and did not end on good terms... so I want to get back to the joy of playing music with others. Maybe another band could
         rise from the ashes that are my life right now. Jammer is the perfect opportunity to casually get back into playing music.
         I hope you join my jam!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-33.jpg"
@@ -110,12 +104,10 @@ user11:
   email: "gen10@demo.com"
   password: "password"
   first_name: "Frederick"
-  last_name: "Johnson"
+  last_name: "Jones"
   bio: "I play bass guitar and am looking for a lead guitar and a drummer to complete me. Playing bass is fun but there's only so much
         I can play solo with it. I want to feel complete and jamming with others is hopefully the way to do that. I'm
-        flexible with genres but NO metal for me. It's too much for my ears if you get me. My favourite band is Parquet Courts
-        if that gives any indication to what style I might want to jam to. It is post punk type of thing, but equally I'm
-        a big fan of Velvet Undergound."
+        flexible with genres but NO metal for me. It's too much for my ears if you get me."
   remote_photo_url: "https://tinyfac.es/data/avatars/7D3FA6C0-83C8-4834-B432-6C65ED4FD4C3-500w.jpeg"
 user12:
   email: "gen11@demo.com"
