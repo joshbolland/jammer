@@ -1,0 +1,54 @@
+.text-center {
+  text-align: center;
+}
+.jam-show-page {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 15px;
+}
+.jam-info-show {
+  grid-column: 1 / span 1;
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+
+.jam-info-show,
+.slots-section{
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.jam-header {
+  height: 250px;
+  .jam-avatar-img {
+    width: 100%;
+  }
+}
+.jam-details {
+  padding: 0 10px;
+  height: 140px;
+  text-align: left;
+}
+.jam-description {
+  padding: 0 10px;
+  height: 220px;
+  position: relative;
+}
+.slots-section {
+    grid-column: 2 / span 1;
+}
+.slots-section-content {
+
+}

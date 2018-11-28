@@ -1,52 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="profilecard">
-        <h3> <%= @jam.title %> </h3>
-        <%= cl_image_tag @jam.photo,  width: 400, height: 200, crop: :fill, class: "jam-avatar" %>
-        <h3>Details about this jam</h3>
-        <p> Where: <%= @jam.location %> </p>
-        <p> Date: <%= @jam.date %> | Time: <%= @jam.time %> </p>
-        <h3> Description</h3>
-        <p> <%= @jam.description %> </p>
-        <h3>Jammers</h3>
-        <% @jam.slots.each do |slot| %>
-          <% if @jam.user == current_user %>
-            <% if slot.user != nil %>
-              <p>
-                <% if @jam.user == slot.user %>
-                  <i class="fas fa-crown"></i>
-                <% end %>
-                <%= slot.instrument.name %> | <%= slot.user.first_name %> <%= slot.user.last_name %>
-                <% unless slot.user == current_user %>
-                  <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %>
-                <% end %>
-                <%= link_to "Delete Slot", slot_path(slot), method: :delete, method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %></p>
-            <% else %>
-              <p><%= slot.instrument.name %>
-                <%= link_to "Take this slot", slot_requests_path(slot, request: { status: "accepted" }), method: :post, class: "custom-file-upload" %> |
-                <%= link_to "Delete Slot", slot_path(slot), method: :delete, data: { confirm: "Sure you want to delete this slot?" }, class: "custom-file-upload" %> </p><br>
-            <% end %>
-
-          <% else %>
-            <% if slot.user %>
-              <p>
-                <% if @jam.user == slot.user %>
-                  <i class="fas fa-crown"></i>
-                <% end %>
-                <%= slot.instrument.name %> | <%= slot.user.first_name %> <%= slot.user.last_name %>
-                <%= link_to "View Profile", user_path(slot.user), class: "custom-file-upload" %></p>
-            <% else %>
-              <p><%= slot.instrument.name %>
-                <%= link_to "Request this Slot", new_slot_request_path(slot), class: "custom-file-upload" %></p><br>
-            <% end %>
-          <% end %>
-        <% end %>
-
-        <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
-        <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
-        <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
-      </div>
+<div class="jam-show-page text-center">
+  <div class="jam-info-show">
+    <div class="jam-header">
+      <%= cl_image_tag @jam.photo, crop: :fill, class: "jam-avatar-img" %>
     </div>
+    <div class="jam-details">
+      <h3> Where: <%= @jam.location %> </h3>
+      <h3> Date: <%= @jam.date %> | Time: <%= @jam.time %> </h3>
+    </div>
+    <div class="jam-description">
+      <h3>Description</h3>
+      <p> <%= @jam.description %> </p>
+    </div>
+  </div>
+  <div class="slots-section">
+    <h3>Jammers</h3>
+    <%= render 'jam_showpage_card' %>
   </div>
 </div>
