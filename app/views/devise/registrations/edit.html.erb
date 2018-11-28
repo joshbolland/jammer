@@ -13,7 +13,7 @@
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
-            <%= f.input :photo %>
+            <%= f.input :photo, input_html: {id: "file-upload"}, label: "Upload Photo", label_html: {for: "file-upload", class: "custom-file-upload"} %>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :first_name,
                     required: false,
