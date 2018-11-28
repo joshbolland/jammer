@@ -3,14 +3,14 @@ demo_user:
   password: "password"
   first_name: "Jesse"
   last_name: "Cole"
-  bio: I've been playing bass guitar for a couple years on and off and am excited to be
+  bio: "I've been playing bass guitar for a couple years on and off and am excited to be
        playing with other people. I have already hosted a couple jams and it's gone really well. We played one
        time in a basement, another time in a rehearsal studio. It's been great to meet people and get some
        creative juices flowing.
        I'm love making connections with people that are music related. My favourite
        bands at the moment are Cut Worms and The Growlers and my genre of choice is indie rock but I'll go with almost anything!
-       Join my jam fam!
-  remote_photo_url: https://randomuser.me/api/portraits/women/4.jpg
+       Join my jam fam!"
+  remote_photo_url: "https://randomuser.me/api/portraits/women/4.jpg"
 
 generic_user00:
   email: "gen00@demo.com"
