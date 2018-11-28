@@ -1,98 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="profilecard">
-        <% @jam.slots.each do |slot| %>
-        <div class="slot-request-card">
-          <% if slot.user != nil %>
-          <%= cl_image_tag slot.user.photo, height: 130, width: 130, gravity: "auto", crop:"fill", class: "slot-photo-clipped" %>
-          <div class="user-name">
-            <h1><%= slot.instrument.name %></h1>
-          </div>
-          <div class="request-icon">
-            <% if slot.instrument.name == 'Lead Guitar' %>
-            <i class="flaticon-guitar"></i>
-            <% elsif slot.instrument.name == 'Bass Guitar' %>
-            <i class="flaticon-music"></i>
-            <% elsif slot.instrument.name == 'Vocals' %>
-            <i class="flaticon-speaker"></i>
-            <% elsif slot.instrument.name == 'Drums' %>
-            <i class="flaticon-drum"></i>
-            <% elsif slot.instrument.name == 'Keys' %>
-            <i class="flaticon-piano"></i>
-            <% end %>
-          </div>
-          <div class="slot-info">
-              <% if slot.jam.user == current_user %>
-                <% if slot.instrument.name == "Vocals" %>
-                  <p>You are singing at your jam.</p>
-                <% else %>
-                  <p>You are playing <%= slot.instrument.name %> at your jam.</p>
-                <% end %>
-              <% else %>
-                <% if slot.instrument.name == "Vocals" %>
-                  <p><%= link_to user_path(slot.user) do %><%= slot.user.first_name %> <%= slot.user.last_name %><% end %> is singing at this jam.</p>
-                <% else %>
-                  <p><%= link_to user_path(slot.user) do %><%= slot.user.first_name %> <%= slot.user.last_name %><% end %> is playing <%= slot.instrument.name %> at this jam.</p>
-                <% end %>
-              <% end %>
-        </div>
-          <div class="request-footer">
-            <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "jam-slot-delete-button" if slot.jam.user == current_user %>
-          </div>
-        </div>
-
-        <% else %>
-        <%= image_tag("user.png", class: "request-photo-clipped") %>
-        <div class="user-name">
-          <h1><%= slot.instrument.name %></h1>
-        </div>
-        <div class="request-icon">
-          <% if slot.instrument.name == 'Lead Guitar' %>
-          <i class="flaticon-guitar"></i>
-          <% elsif slot.instrument.name == 'Bass Guitar' %>
-          <i class="flaticon-music"></i>
-          <% elsif slot.instrument.name == 'Vocals' %>
-          <i class="flaticon-speaker"></i>
-          <% elsif slot.instrument.name == 'Drums' %>
-          <i class="flaticon-drum"></i>
-          <% elsif slot.instrument.name == 'Keys' %>
-          <i class="flaticon-piano"></i>
-          <% end %>
-        </div>
-        <% if slot.jam.user == current_user %>
-            <div class="request-info">
-            <% if slot.instrument.name == "Vocals" %>
-              <p>No one is singing at your jam yet. There are <%= slot.requests.size %> pending requests for this slot %></p>
-            <% else %>
-              <p>No one is playing <%= slot.instrument.name %> at your jam yet. There are <%= slot.requests.size %> pending requests for this slot.</p>
-            <% end %>
-            </div>
-          <% else %>
-            <div class="request-info">
-              <% if slot.instrument.name == "Vocals" %>
-                <p> No one is singing at this jam yet. Hit the request button below!</p>
-              <% else %>
-                <p> No one is playing <%= slot.instrument.name %> at this jam yet. Hit the request button below!</p>
-              <% end %>
-            </div>
-          <% end %>
-        <div class="request-footer">
-          <% if slot.jam.user == current_user %>
-          <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "jam-slot-delete-button" if slot.jam.user == current_user %>
-          <% else %>
-          <%= link_to "Request Slot", new_slot_request_path(slot), class: "request-slot-button" %>
-          <% end %>
-        </div>
-      </div>
-      <% end %>
-      <% end %>
-
-      <%= link_to "Add a Slot", new_jam_slot_path(@jam), class: "button_primary" if @jam.user == current_user %>
-      <%= link_to "Back to Jams", jams_path, class: "button_primary" %><br><br>
-      <%= link_to "Edit Jam", edit_jam_path(@jam), class: "button_primary" if @jam.user == current_user %>
+<div class="jam-show-page text-center">
+  <div class="jam-info-show">
+    <div class="jam-header">
+      <%= cl_image_tag @jam.photo, crop: :fill, class: "jam-avatar-img" %>
+    </div>
+    <div class="jam-details">
+      <h3> Where: <%= @jam.location %> </h3>
+      <h3> Date: <%= @jam.date %> | Time: <%= @jam.time %> </h3>
+    </div>
+    <div class="jam-description">
+      <h3>Description</h3>
+      <p> <%= @jam.description %> </p>
     </div>
   </div>
-</div>
-</div>
+  <div class="slots-section">
+    <div class="requests">
+      <%= render 'jam_showpage_card' %>
+    </div>
+  </div>
 </div>
