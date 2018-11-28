@@ -1,16 +1,52 @@
 <div class="instruments_selector">
-  <% if @available_instruments.size > 0 && @user == current_user %>
+  <% if @user == current_user %>
     <%= simple_form_for @user_instrument do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <div class="form-inputs">
-        <%= f.association :instrument, collection: @available_instruments, label_method: :name, include_blank: false, label: false %>
+      <div class="form-group">
+        <h4>Skills</h4>
+        <input type="hidden" name="user_instrument[instrument_ids][]" value="">
+        <div class="instrument-choices">
+          <% Instrument.all.each do |instrument| %>
+            <input type="checkbox" class="hidden" value="<%= instrument.id %>" name="user_instrument[instrument_ids][]" id="post_instrument_ids_<%= instrument.id %>">
+            <% user_plays_instrument = current_user.instruments.include?(instrument) %>
+            <label for="post_instrument_ids_<%= instrument.id %>" class="instrument-choice <%= user_plays_instrument ? 'active' : '' %>">
+              <%= instrument.name %>
+            </label>
+          <% end %>
+         </div>
       </div>
-
       <div class="form-actions add-instrument">
         <%= render 'shared/done_primary', class: "button_primary" %>
       </div>
     <% end %>
+  <% else %>
+    <h4>Skills</h4>
+    <div class="grid-container">
+      <% @user.instruments.each_with_index do |instrument, index| %>
+        <% if index == 0 %>
+          <div class="instrument-tag">
+            <div class="grid-item"><%= instrument.name %></div>
+          </div>
+        <% elsif index == 1 %>
+          <div class="instrument-tag">
+            <div class="grid-item"><%= instrument.name %></div>
+          </div>
+        <% elsif index == 2 %>
+          <div class="instrument-tag">
+            <div class="grid-item"><%= instrument.name %></div>
+          </div>
+        <% elsif index == 3 %>
+          <div class="instrument-tag">
+            <div class="grid-item"><%= instrument.name %></div>
+          </div>
+        <% elsif index == 4 %>
+          <div class="instrument-tag">
+            <div class="grid-item"><%= instrument.name %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
