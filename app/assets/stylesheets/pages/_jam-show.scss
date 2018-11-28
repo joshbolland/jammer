@@ -90,9 +90,6 @@
 }
 
 .slot-info {
-  position: absolute;
-  left: 130px;
-  top: 20px;
   width: 50%;
   text-align: left;
   a {
@@ -149,5 +146,18 @@
   color: white;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   text-decoration: none;
+}
+
+.jam-show-slot-info {
+  width: 50%;
+  position: absolute;
+  top: 20px;
+  left: 130px;
+  text-align: left;
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
 }
 
