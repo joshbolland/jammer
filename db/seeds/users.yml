@@ -1,8 +1,8 @@
 demo_user:
   email: "demo@demo.com"
   password: "password"
-  first_name: Jesse
-  last_name: Cole
+  first_name: "Jesse"
+  last_name: "Cole"
   bio: I've been playing bass guitar for a couple years on and off and am excited to be
        playing with other people. I have already hosted a couple jams and it's gone really well. We played one
        time in a basement, another time in a rehearsal studio. It's been great to meet people and get some
@@ -115,8 +115,8 @@ generic_user09:
   last_name: "Johnson"
   bio: "I play bass guitar and am looking for a lead guitar and a drummer to complete me. Playing bass is fun but there's only so much
         I can play solo with it. I want to feel complete and jamming with others is hopefully the way to do that. I'm
-        flexible with genres but NO metal for me. It's too much for my ears if you get me. Marshay favourite band is Parquet Courts
-        if that gives any indication to what style I might want to jam to. It is post punkm type of thing, but equally I'm
+        flexible with genres but NO metal for me. It's too much for my ears if you get me. My favourite band is Parquet Courts
+        if that gives any indication to what style I might want to jam to. It is post punk type of thing, but equally I'm
         a big fan of Velvet Undergound."
   remote_photo_url: "https://tinyfac.es/data/avatars/7D3FA6C0-83C8-4834-B432-6C65ED4FD4C3-500w.jpeg"
   generic_user11:
