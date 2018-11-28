@@ -86,7 +86,7 @@ db_seed('users.yml') { |attributes| create_a_seed_user(attributes) }
 assign_instrument(@instruments[0], [2, 8, 12, 13]) # lead guitar
 assign_instrument(@instruments[1], [0, 11]) # bass guitar
 assign_instrument(@instruments[2], [3, 4, 7]) # drums
-assign_instrument(@instruments[3], [1, 6, 9, 10]) # vocals
+assign_instrument(@instruments[3], [1, 6, 9, 10, 4, 13]) # vocals
 assign_instrument(@instruments[4], [5]) # keys
 
 # Seed jams
