@@ -38,10 +38,10 @@
 
     .flaticon-speaker:before { content: "\f100"; }
 .flaticon-music:before { content: "\f101"; }
-.flaticon-guitar:before { content: "\f102"; }
+.flaticon-guitar:before { font-family: Flaticon; font-size: 20px; font-style: normal; margin-left: 20px; content: "\f102"; }
 .flaticon-drum:before { content: "\f103"; }
 .flaticon-piano:before { content: "\f104"; }
-    
+
     $font-Flaticon-speaker: "\f100";
     $font-Flaticon-music: "\f101";
     $font-Flaticon-guitar: "\f102";
