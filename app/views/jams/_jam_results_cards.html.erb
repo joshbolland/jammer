@@ -1,5 +1,5 @@
 <% @jams.each do |jam| %>
-  <div class="flex-card jam-card">
+  <div class="jam-card">
     <%= cl_image_tag jam.photo, height: 200, width: 200, gravity: "auto", crop:"fill", class: "jam-photo-clipped" %>
     <div class='jam-title'>
       <h1><%= jam.title %></h1>

@@ -9,6 +9,20 @@
   margin-top: -80px;
 }
 
+.flex {
+  display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  p {
+    margin: 0;
+  }
+}
+
+.flexbox-edit {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .new-jam-form {
   height: auto;
   width: 650px;
@@ -29,7 +43,6 @@
 
   .form-group {
     margin-right: 50%;
-    font-family: raleway;
   }
 
   .input {
@@ -39,6 +52,12 @@
     color: $jammer-black;
   }
 }
+
+.form-inputs-edit {
+  width: 100%;
+  margin-left: -2px;
+}
+
 
 #image-next-to-form {
   width: 65%;
@@ -70,21 +89,18 @@
   h1 {
     color: #333333;
     margin-top: 5px;
-    font-family: 'Raleway', sans-serif;
     font-size: 40px;
     font-weight: 800;
   }
 
   h3 {
     color: #333333;
-    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 800;
   }
 
   h4 {
     color: #333333;
-    font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 800;
   }
@@ -141,7 +157,6 @@
   height: 32px;
   border-radius: 5px;
   background-color: $jammer-blue;
-  font-family: raleway;
   color: white;
   margin-top: 7px;
   padding: 8px;
@@ -163,7 +178,6 @@
   height: 25px;
   border-radius: 5px;
   background-color: $jammer-blue;
-  font-family: raleway;
   color: white;
   margin-top: 7px;
   padding: 5px;
@@ -278,4 +292,13 @@
     margin-left: 125px;
   }
 
+}
+
+.delete-button-position {
+    margin-bottom: -20px;
+    margin-left: 232px;
+}
+
+.update-button-position {
+  margin-bottom: 67px;
 }

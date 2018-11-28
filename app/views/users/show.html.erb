@@ -1,72 +1,74 @@
-
-  <div class="profile text-center">
-    <div class="user-info">
-      <div class="user-info-content">
-        <div class="head">
-          <%= render 'avatar_name' %>
-        </div>
-        <div class="avatar_pic">
-          <%= render 'avatar_pic' %>
-        </div>
-        <div class="skills">
-          <%= render 'instrument_selector' %>
-        </div>
-        <div class="about">
-          <%= render 'about' %>
-          <%= render 'edit_profile_button' %>
-        </div>
+<div class="profile text-center">
+  <div class="user-info">
+    <div class="user-info-content">
+      <div class="head">
+        <%= render 'avatar_name' %>
       </div>
-    </div>
-    <div class="tab-section">
-      <div class="tab-section-content">
-        <% if @user == current_user %>
-          <ul class="tab-nav">
-            <li>
-              <a class="button active" href="#one">Jams I'm hosting</a>
-            </li>
-            <li>
-              <a class="button" href="#two">Pending requests</a>
-            </li>
-            <li>
-              <a class="button" href="#three">Jams I'm playing</a>
-            </li>
-            <li>
-              <a class="button" href="#four">Requests I made</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="one">
-              <%= render 'hosted_jams' %>
-            </div>
-            <div class="tab-pane" id="two">
-              <%= render 'pending_requests_to_user' %>
-            </div>
-            <div class="tab-pane" id="three">
-              <%= render 'confirmed_slots' %>
-            </div>
-            <div class="tab-pane" id="four">
-              <%= render 'personal_requests_from_user' %>
-            </div>
-          </div>
-        <% else %>
-          <ul class="tab-nav">
-            <li>
-              <a class="button active" href="#one">Jams <%= @user.first_name %> hosting</a>
-            </li>
-            <li>
-              <a class="button" href="#three">Jams <%= @user.first_name %>  playing in</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="one">
-              <%= render 'hosted_jams' %>
-            </div>
-            <div class="tab-pane" id="three">
-              <%= render 'confirmed_slots' %>
-            </div>
-          </div>
-        <% end %>
+      <div class="avatar_pic">
+        <%= render 'avatar_pic' %>
+      </div>
+      <div class="skills">
+        <%= render 'instrument_selector' %>
+      </div>
+      <div class="about">
+        <%= render 'about' %>
+        <%= render 'edit_profile_button' %>
       </div>
     </div>
   </div>
-
+  <div class="tab-section">
+    <div class="tab-section-content">
+      <% if @user == current_user %>
+      <ul class="tab-nav">
+        <li>
+          <a class="button active" href="#one">Jams I'm hosting</a>
+        </li>
+        <li>
+          <a class="button" href="#two">Pending requests</a>
+        </li>
+        <li>
+          <a class="button" href="#three">Jams I'm playing</a>
+        </li>
+        <li>
+          <a class="button" href="#four">Requests I made</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="one">
+          <%= render 'hosted_jams' %>
+        </div>
+        <div class="tab-pane" id="two">
+          <div class="cards-container">
+            <div class="requests">
+              <%= render 'pending_requests_to_user' %>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="three">
+          <%= render 'confirmed_slots' %>
+        </div>
+        <div class="tab-pane" id="four">
+          <%= render 'personal_requests_from_user' %>
+        </div>
+      </div>
+      <% else %>
+      <ul class="tab-nav">
+        <li>
+          <a class="button active" href="#one">Jams <%= @user.first_name %> hosting</a>
+        </li>
+        <li>
+          <a class="button" href="#three">Jams <%= @user.first_name %> playing in</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="one">
+          <%= render 'hosted_jams' %>
+        </div>
+        <div class="tab-pane" id="three">
+          <%= render 'confirmed_slots' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

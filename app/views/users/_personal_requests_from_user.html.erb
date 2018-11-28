@@ -1,9 +1,33 @@
 <% if @personal_requests.size > 0 && @user == current_user %>
-  <hr>
-  <h3>My Requests</h3>
   <% @personal_requests.each do |request| %>
-    <%= request.slot.jam.title %> | <em><%= request.slot.jam.location %></em> | <%= request.slot.jam.date %> | <%= request.message %> <br>
-    <%= link_to "Details", jam_path(request.slot.jam), class: "custom-file-upload" %> |
-    <%= link_to "Cancel", request_path(request), method: :delete, data: { confirm: "Your request will be cancelled. Do you want to continue?" },class: "custom-file-upload" %><br><br>
+  <div class="request-card">
+    <%= cl_image_tag request.slot.jam.photo, height: 130, width: 130, gravity: "auto", crop:"fill", class: "request-photo-clipped" %>
+    <div class="user-name">
+      <h1><%= link_to jam_path(request.slot.jam) do %>
+        <%= request.slot.jam.title %></h1>
+        <% end %>
+    </div>
+    <div class="request-icon">
+      <% if request.slot.instrument.name == 'Lead Guitar' %>
+      <i class="flaticon-guitar"></i>
+      <% elsif request.slot.instrument.name == 'Bass Guitar' %>
+      <i class="flaticon-music"></i>
+      <% elsif request.slot.instrument.name == 'Vocals' %>
+      <i class="flaticon-speaker"></i>
+      <% elsif request.slot.instrument.name == 'Drums' %>
+      <i class="flaticon-drum"></i>
+      <% elsif request.slot.instrument.name == 'Keys' %>
+      <i class="flaticon-piano"></i>
+      <% end %>
+    </div>
+    <div class="request-info">
+      <p>You've asked <%= request.slot.jam.user.first_name %> <%= request.slot.jam.user.last_name %> if you can play <%= request.slot.instrument.name %> at <%= request.slot.jam.title %>.</p>
+    </div>
+    <div class="request-footer">
+      <%= link_to "Cancel Request", request_path(request), method: :delete, class: "decline-button" %>
+    </div>
+</div>
   <% end %>
+<% else %>
+  <h5>You have no pending requests. Why not join a jam?</h5><br> <%= link_to "Join a Jam", jams_path, class: "custom-file-upload" %>
 <% end %>
