@@ -19,7 +19,7 @@
 #shape_logged_in {
   stroke-width: 6px;
   fill: transparent;
-  stroke: $jammer-blue;
+  stroke: rgba($color: #ffffff, $alpha: 0.0);
   stroke-dasharray: 85 400;
   stroke-dashoffset: -220;
   transition: 1s all ease;
