@@ -20,7 +20,7 @@
 #shape {
   stroke-width: 6px;
   fill: transparent;
-  stroke: $jammer-purple;
+  stroke: rgba($color: #ffffff, $alpha: 0.0);
   stroke-dasharray: 85 400;
   stroke-dashoffset: -220;
   transition: 1s all ease;
@@ -38,6 +38,6 @@
   stroke-dasharray: 50 0;
   stroke-width: 5px;
   stroke-dashoffset: 0;
-  stroke: $jammer-blue;
+  stroke: $jammer-purple;
   }
 
