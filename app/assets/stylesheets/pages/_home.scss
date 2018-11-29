@@ -13,9 +13,9 @@
 
 #video-gradient {
   position: fixed;
-  right: 0; 
+  right: 0;
   bottom: 0;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
@@ -57,4 +57,12 @@
     margin: 0;
     padding: 0;
   }
+}
+
+.ap-input-icon svg {
+  fill: #cfcfcf;
+  position: absolute;
+  top: 33%;
+  right: 0;
+  transform: translateY(-50%);
 }
