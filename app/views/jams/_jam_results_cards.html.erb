@@ -13,7 +13,7 @@
     <div class='jam-slots'>
       <% jam.slots.each do |slot| %>
       <% if slot.instrument.name == 'Lead Guitar' %>
-      <i class="flaticon-guitar"></i> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+      <%= image_tag("guitar.svg", size: "20x20") %> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
       <span class="available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="slot-info">
         <% if jam.user == slot.user %>
         <i class="fas fa-crown"></i>
@@ -23,7 +23,7 @@
         <% end %>
       </span> <% end %> <br>
       <% elsif slot.instrument.name == 'Bass Guitar' %>
-      <i class="flaticon-music"></i> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+       <%= image_tag("bass.svg", size: "20x20") %> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
       <span class="available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="slot-info">
         <% if jam.user == slot.user %>
         <i class="fas fa-crown"></i>
@@ -33,7 +33,7 @@
         <% end %>
       </span> <% end %> <br>
       <% elsif slot.instrument.name == 'Vocals' %>
-      <i class="flaticon-speaker"></i> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+       <%= image_tag("mic.svg", size: "20x20") %> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
       <span class="available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="slot-info">
         <% if jam.user == slot.user %>
         <i class="fas fa-crown"></i>
@@ -43,7 +43,7 @@
         <% end %>
       </span> <% end %> <br>
       <% elsif slot.instrument.name == 'Drums' %>
-      <i class="flaticon-drum"></i> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+       <%= image_tag("drum.svg", size: "20x20") %> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
       <span class="available-slot"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="slot-info">
         <% if jam.user == slot.user %>
         <i class="fas fa-crown"></i>
@@ -53,7 +53,7 @@
         <% end %>
       </span> <% end %> <br>
       <% elsif slot.instrument.name == 'Keys' %>
-      <i class="flaticon-piano"></i> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
+       <%= image_tag("piano.svg", size: "20x20") %> <span class="slot-info"><strong><%= slot.instrument.name %></strong> |</span> <% if slot.user == nil %>
       <span class="slot-info"><%= link_to "Available", new_slot_request_path(slot) %></span> <% else %> <span class="slot-info">
         <% if jam.user == slot.user %>
         <i class="fas fa-crown"></i>
