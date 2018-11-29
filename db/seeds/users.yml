@@ -1,12 +1,12 @@
 user00:
-  email: "user00@demo.com"
+  email: "josh@lewagon.com"
   password: "password"
-  first_name: "Jesse"
-  last_name: "Cole"
+  first_name: "Josh"
+  last_name: "Bolland"
   bio: "I've been playing bass guitar for a couple years on and off and am excited to be
        playing with other people. I have already hosted a couple jams and it's gone really well.
        It's been great to meet people and get some creative juices flowing."
-  remote_photo_url: "https://randomuser.me/api/portraits/women/4.jpg"
+  remote_photo_url: "https://res.cloudinary.com/dohcbj8ua/image/upload/v1543505577/CropJosh.jpg"
 user01:
   email: "user01@demo.com"
   password: "password"
