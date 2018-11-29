@@ -1,6 +1,11 @@
 .search-bar {
   text-align: center;
   margin: 15px 150px 15px 190px;
+  .form-control,
+  .datepicker
+  .flatpickr-input {
+    background-color: white;
+  }
 }
 .content {
   // display: flex;
