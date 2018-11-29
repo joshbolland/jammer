@@ -1,18 +1,33 @@
 <div class="jam-show-page text-center">
   <div class="jam-info-show">
     <div class="jam-header">
+      <div class="jam-pic">
       <%= cl_image_tag @jam.photo, crop: :fill, class: "jam-avatar-img" %>
+      </div>
     </div>
     <div class="jam-details">
-      <h3> Where: <%= @jam.location %> </h3>
-      <h3> Date: <%= @jam.date %> | Time: <%= @jam.time %> </h3>
+      <h4>WHEN:</h4>
+      <h3><i class="fa fa-calendar-alt"></i> <%= @jam.date.strftime("%e %b %Y") %></h3>
+      <h3><i class="far fa-clock"></i> <%= @jam.time.strftime("%l:%M %p") %></h3>
+      <h4>WHERE:</h4>
+      <h3><i class="fas fa-map-marker-alt"></i> <%= @jam.location %></h3>
     </div>
+      <hr>
     <div class="jam-description">
-      <h3>Description</h3>
+      <h4>ABOUT</h4>
       <p> <%= @jam.description %> </p>
+      <% if @jam.user == current_user %>
+        <div class="slot-button">
+          <%= link_to "Open a slot", new_jam_slot_path(@jam), class: "custom-file-upload" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="slots-section">
+    <div class="jam-main-header">
+      <div class="jam-header-title"><h3> <%= @jam.title.upcase %> </h3></div>
+      <div class="jam-host"> <p>Hosted by <%= @jam.user.first_name %> <%= @jam.user.last_name %> </p></div>
+    </div>
     <div class="requests">
       <%= render 'jam_showpage_card' %>
     </div>

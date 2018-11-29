@@ -1,4 +1,4 @@
-<% if @hosted_jams.size > 0 && @user == current_user %>
+<% if @hosted_jams.size > 0 %>
   <% @hosted_jams.each do |jam| %>
     <div class="user-jam-card">
       <%= cl_image_tag jam.photo, height: 170, width: 170, gravity: "auto", crop:"fill", class: "user-jam-photo-clipped" %>
