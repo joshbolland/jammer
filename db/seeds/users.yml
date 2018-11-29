@@ -1,5 +1,5 @@
 user00:
-  email: "demo@demo.com"
+  email: "user00@demo.com"
   password: "password"
   first_name: "Jesse"
   last_name: "Cole"
@@ -8,7 +8,7 @@ user00:
        It's been great to meet people and get some creative juices flowing."
   remote_photo_url: "https://randomuser.me/api/portraits/women/4.jpg"
 user01:
-  email: "gen00@demo.com"
+  email: "user01@demo.com"
   password: "password"
   first_name: "Diane"
   last_name: "Fischer"
@@ -17,7 +17,7 @@ user01:
         to take it to the next level! Finding Jammer has been a gift from above."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-22.jpg"
 user02:
-  email: "gen01@demo.com"
+  email: "user02@demo.com"
   password: "password"
   first_name: "Henry"
   last_name: "Lutz"
@@ -27,7 +27,7 @@ user02:
         enthusiasts I can jam with and maybe even be friends with haha!"
   remote_photo_url: "https://pbs.twimg.com/profile_images/999738241942212609/QrZO-QjT.jpg"
 user03:
-  email: "gen02@demo.com"
+  email: "user03@demo.com"
   password: "password"
   first_name: "Daniella"
   last_name: "Lin"
@@ -37,7 +37,7 @@ user03:
         some experience would be ideal."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-8.jpg"
 user04:
-  email: "gen03@demo.com"
+  email: "user04@demo.com"
   password: "password"
   first_name: "Dr. Phay"
   last_name: "Phe"
@@ -45,7 +45,7 @@ user04:
         that I'm buying new sticks every week! So if you think you can handle that then I am the guy to jam with."
   remote_photo_url: "https://avatars3.githubusercontent.com/u/20525002?s=460&v=4"
 user05:
-  email: "gen04@demo.com"
+  email: "user05@demo.com"
   password: "password"
   first_name: "Di"
   last_name: "Franks"
@@ -54,7 +54,7 @@ user05:
         start off with. Hopefully play some soulful stuff in any venue really. Join my jam if you crave these things too!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-73.jpg"
 user06:
-  email: "gen05@demo.com"
+  email: "user06@demo.com"
   password: "password"
   first_name: "Cam"
   last_name: "Pearson"
@@ -63,7 +63,7 @@ user06:
         meeting people similar to me as I don't have any friends who like music like I do."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-41.jpg"
 user07:
-  email: "gen06@demo.com"
+  email: "user07@demo.com"
   password: "password"
   first_name: "Mabel"
   last_name: "Siha"
@@ -72,7 +72,7 @@ user07:
         can all find a spiritual connection together through playing music."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-69.jpg"
 user08:
-  email: "gen07@demo.com"
+  email: "user08@demo.com"
   password: "password"
   first_name: "Jim"
   last_name: "Naffari"
@@ -81,7 +81,7 @@ user08:
         My focus for the moment is to play guitar with musically like-minded people. If i was to choose a genre to play it'd be rock."
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/marvell.png"
 user09:
-  email: "gen08@demo.com"
+  email: "user09@demo.com"
   password: "password"
   first_name: "Marsha"
   last_name: "Haley"
@@ -91,7 +91,7 @@ user09:
         next level!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/female-65.jpg"
 user10:
-  email: "gen09@demo.com"
+  email: "user10@demo.com"
   password: "password"
   first_name: "Lou"
   last_name: "Vaughan"
@@ -101,7 +101,7 @@ user10:
         I hope you join my jam!"
   remote_photo_url: "https://d3iw72m71ie81c.cloudfront.net/male-33.jpg"
 user11:
-  email: "gen10@demo.com"
+  email: "user11@demo.com"
   password: "password"
   first_name: "Frederick"
   last_name: "Jones"
@@ -110,7 +110,7 @@ user11:
         flexible with genres but NO metal for me. It's too much for my ears if you get me."
   remote_photo_url: "https://tinyfac.es/data/avatars/7D3FA6C0-83C8-4834-B432-6C65ED4FD4C3-500w.jpeg"
 user12:
-  email: "gen11@demo.com"
+  email: "user12@demo.com"
   password: "password"
   first_name: "Estelle"
   last_name: "Dean"
@@ -119,7 +119,7 @@ user12:
         I'm looking for people to share this passion with and get creative. I'm young wild and free, I hope you join me."
   remote_photo_url: "https://randomuser.me/api/portraits/women/91.jpg"
 user13:
-  email: "gen12@demo.com"
+  email: "user13@demo.com"
   password: "password"
   first_name: "Pedro"
   last_name: "Burris"

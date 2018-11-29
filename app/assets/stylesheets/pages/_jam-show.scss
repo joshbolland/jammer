@@ -121,7 +121,7 @@
   transition: all 0.2s ease;
   position: relative;
   bottom: 2px;
-  left: 145px;
+  left: 115px;
 }
 .jam-slot-delete-button:hover {
   transition: all 0.2s ease;
@@ -168,6 +168,7 @@
     font-weight: bold;
   }
 }
+
 .jam-main-header {
   background: rgb(127,89,251);
   background: linear-gradient(300deg, rgba(127,89,251,1) 0%, rgba(82,49,175,1) 100%);
@@ -208,4 +209,28 @@
     bottom: 40px;
     left: 50px;
   }
+
+.take-slot-button {
+  width: 70px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: $jammer-blue;
+  color: white;
+  margin-top: 7px;
+  padding: 3px;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+  bottom: 2px;
+  left: 115px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+.take-slot-button:hover {
+  transition: all 0.2s ease;
+  background-color: $jammer-hover-blue;
+  color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }

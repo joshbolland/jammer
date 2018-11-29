@@ -132,7 +132,7 @@
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: space-between;
-  margin: 0px 30px;
+  margin: 0px 20px;
 }
 
 .request-card {
@@ -381,8 +381,8 @@
 }
 
 .user-jam-card {
-  height: 130px;
-  width: 350px;
+  height: 170px;
+  width: 390px;
   background-color: white;
   color: black;
   box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3;
@@ -410,16 +410,16 @@
 .user-jam-photo-clipped {
   position: absolute;
   left: 0;
-  width: 130px;
-  height: 130px;
+  width: 170px;
+  height: 170px;
   border-radius: 4px 0px 0px 4px;
-  -webkit-clip-path: polygon(0px 0px, 0px 234px, 130px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 306px, 170px 0px, 0px 0px);
   z-index: 100;
 }
 
 .user-jam-title {
   position: absolute;
-  left: 130px;
+  left: 170px;
   a {
     text-decoration: none;
     color: #7f51ff;
@@ -434,7 +434,7 @@
 .user-jam-slots {
   position: absolute;
   top: 20px;
-  left: 110px;
+  left: 150px;
   h3 {
     margin-top: 10px;
   }
@@ -472,7 +472,7 @@
   border-radius: 0px 0px 4px 4px;
   z-index: 50;
   position: relative;
-  top: 100px;
+  top: 140px;
 }
 
 .user-jam-info {
