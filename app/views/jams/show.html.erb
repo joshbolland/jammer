@@ -16,15 +16,15 @@
     <div class="jam-description">
       <h4>ABOUT</h4>
       <p> <%= @jam.description %> </p>
-      <% if @jam.user == current_user %>
-        <div class="slot-button">
-          <%= link_to "Open a slot", new_jam_slot_path(@jam), class: "custom-file-upload" %>
-        </div>
-      <% end %>
     </div>
   </div>
   <div class="slots-section">
     <div class="jam-main-header">
+      <% if @jam.user == current_user %>
+        <div class="add-slot-button">
+          <%= link_to "Add a slot", new_jam_slot_path(@jam), class: "custom-file-upload" %>
+        </div>
+      <% end %>
       <div class="jam-header-title"><h3> <%= @jam.title.upcase %> </h3></div>
       <div class="jam-host"> <p>Hosted by <%= @jam.user.first_name %> <%= @jam.user.last_name %> </p></div>
     </div>
