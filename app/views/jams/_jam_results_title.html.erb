@@ -5,11 +5,11 @@
   <h3>Looks like we don't have any jams for you to play <%= @instrument.name %> at!</h3>
   <p>Why not host one yourself? <%= link_to "Host a Jam", new_jam_path, class: "custom-file-upload" %></p>
 <% elsif @jams.count == 1 && @location.present? %>
-  <h3> <%= @jams.count %> jam available in <%= @location %>: </h3>
+  <h3> <%= @jams.count %> jam found: </h3>
 <% elsif @jams.count == 1 && @location.blank? %>
-  <h3> <%= @jams.count %> jam available: </h3>
+  <h3> <%= @jams.count %> jam found: </h3>
 <% elsif @jams.count > 1 && @location.present? %>
-  <h3> <%= @jams.count %> jams available in <%= @location %>: </h3>
+  <h3> <%= @jams.count %> jams found: </h3>
 <% elsif @jams.count > 1 && @location.blank? %>
-  <h3> <%= @jams.count %> jams available: </h3>
+  <h3> <%= @jams.count %> jams found: </h3>
 <% end %>
