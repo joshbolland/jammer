@@ -19,7 +19,7 @@
         <% end %>
       </div>
     <div class="jam-show-slot-info">
-      <% if slot.jam.user == current_user %>
+      <% if slot.user == current_user %>
         <% if slot.instrument.name == "Vocals" %>
           <p>You are singing at your jam.</p>
         <% else %>
@@ -34,7 +34,6 @@
       <% end %>
     </div>
     <div class="request-footer">
-      <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "jam-slot-delete-button" if slot.jam.user == current_user %>
     </div>
   </div>
 
@@ -75,6 +74,7 @@
       <% end %>
       <div class="request-footer">
         <% if slot.jam.user == current_user %>
+          <%= link_to "Take Slot",slot_requests_path(slot, request: { status: "accepted" }), method: :post, class: "take-slot-button" %>
           <%= link_to "Delete Slot", slot_path(slot), method: :delete, class: "jam-slot-delete-button" if slot.jam.user == current_user %>
         <% else %>
           <%= link_to "Request Slot", new_slot_request_path(slot), class: "request-slot-button" %>
