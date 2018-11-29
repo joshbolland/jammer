@@ -38,7 +38,8 @@
 }
 
 .jam-header {
-  height: 230px;
+  height: 210px;
+  margin-bottom: 0;
   .jam-avatar-img {
     width: 100%;
     height: 200px;
@@ -46,21 +47,24 @@
 }
 .jam-details {
   padding: 0 50px;
-  height: 180px;
+  height: 150px;
   text-align: left;
 }
 .jam-description {
   padding: 0 50px;
-  height: 200px;
-  position: relative;
+  height: 190px;
 }
 .slots-section {
     grid-column: 2 / span 1;
 }
-.slots-section-content {
 
+.add-some-slots {
+  color: #7253E1;
+  &:hover {
+    text-decoration: none;
+    color: #7253E1;
+  }
 }
-
  .slot-request-card {
   height: 130px;
   width: 350px;
@@ -203,11 +207,20 @@
   justify-content: space-around;
   align-items: center;
 }
-.slot-button {
-  .custom-file-upload {
+.jam-main-header {
+  position: relative;
+  .add-slot-button {
     position: absolute;
-    bottom: 40px;
-    left: 50px;
+    top: 15px;
+    right: 40px;
+    .custom-file-upload {
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    &:hover {
+      background: #4B2F99;
+      }
+    }
   }
 }
 
