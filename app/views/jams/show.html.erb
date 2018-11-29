@@ -16,6 +16,11 @@
     <div class="jam-description">
       <h4>ABOUT</h4>
       <p> <%= @jam.description %> </p>
+      <% if @jam.user == current_user %>
+        <div class="slot-button">
+          <%= link_to "Open a slot", new_jam_slot_path(@jam), class: "custom-file-upload" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="slots-section">

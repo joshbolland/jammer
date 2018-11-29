@@ -51,7 +51,7 @@
 }
 .jam-description {
   padding: 0 50px;
-  height: 220px;
+  height: 200px;
   position: relative;
 }
 .slots-section {
@@ -192,4 +192,20 @@
         text-align: center;
         color: #F4F4F4;
       }
+}
+.no-slots-no-requests {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.slot-button {
+  .custom-file-upload {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+  }
 }
