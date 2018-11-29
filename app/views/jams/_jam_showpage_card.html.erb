@@ -8,15 +8,15 @@
       </div>
       <div class="request-icon">
         <% if slot.instrument.name == 'Lead Guitar' %>
-          <i class="flaticon-guitar"></i>
+          <%= image_tag("guitar.svg", size: "20x20") %>
         <% elsif slot.instrument.name == 'Bass Guitar' %>
-          <i class="flaticon-music"></i>
+          <%= image_tag("bass.svg", size: "20x20") %>
         <% elsif slot.instrument.name == 'Vocals' %>
-          <i class="flaticon-speaker"></i>
+          <%= image_tag("mic.svg", size: "20x20") %>
         <% elsif slot.instrument.name == 'Drums' %>
-          <i class="flaticon-drum"></i>
+          <%= image_tag("drum.svg", size: "20x20") %>
         <% elsif slot.instrument.name == 'Keys' %>
-          <i class="flaticon-piano"></i>
+          <%= image_tag("piano.svg", size: "20x20") %>
         <% end %>
       </div>
     <div class="jam-show-slot-info">
@@ -45,15 +45,15 @@
         </div>
         <div class="request-icon">
           <% if slot.instrument.name == 'Lead Guitar' %>
-            <i class="flaticon-guitar"></i>
+            <%= image_tag("guitar.svg", size: "20x20") %>
           <% elsif slot.instrument.name == 'Bass Guitar' %>
-            <i class="flaticon-music"></i>
+            <%= image_tag("bass.svg", size: "20x20") %>
           <% elsif slot.instrument.name == 'Vocals' %>
-            <i class="flaticon-speaker"></i>
+            <%= image_tag("mic.svg", size: "20x20") %>
           <% elsif slot.instrument.name == 'Drums' %>
-            <i class="flaticon-drum"></i>
+            <%= image_tag("drum.svg", size: "20x20") %>
           <% elsif slot.instrument.name == 'Keys' %>
-            <i class="flaticon-piano"></i>
+            <%= image_tag("piano.svg", size: "20x20") %>
           <% end %>
         </div>
       <% if slot.jam.user == current_user %>
