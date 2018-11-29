@@ -86,6 +86,7 @@
 <% end %>
 <% elsif @jam.user == current_user  %>
   <div class="no-slots">
-    <h5>Looks like you have no slots open for this jam. Why not add some? </h5><br> <%= link_to "Add a slot", new_jam_slot_path(@jam), class: "custom-file-upload" %>
+    <%= image_tag("no-jam-slots.svg", size: "302x262")%>
+    <h5>It's dead in here! Why don't you add some slots? </h5><br> <%= link_to "Add a slot", new_jam_slot_path(@jam), class: "custom-file-upload" %>
   </div>
 <% end %>
