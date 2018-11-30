@@ -1,4 +1,4 @@
-<h4>Find your future bandmates</h4>
+<h4>Find people to play with</h4>
 <%= form_tag jams_path, class: "form-group", method: :get do %>
 <p>WHAT DO YOU PLAY?</p>
 <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "select2 fancy-form"%>
