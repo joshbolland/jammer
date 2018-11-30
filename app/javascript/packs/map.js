@@ -9,7 +9,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/renatasva/cjosydc3g0iav2rs8jdeearyi'
+    style: 'mapbox://styles/renatasva/cjp30oqln2mpb2spj1yx83xn0'
   });
 
   map.addControl(new MapboxGeocoder({

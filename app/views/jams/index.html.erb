@@ -1,5 +1,6 @@
 <div class="search-bar">
-  <h2>Find jams in your area</h2>
+<br>
+<div class="search-inputs">
   <%= form_tag jams_path, method: :get, :class => "form-group row" do %>
   <div class="col-md-2">
     <%= select_tag "instrument", options_from_collection_for_select(@instruments, "id", "name"), class: "form-control" %>
@@ -14,8 +15,8 @@
     <%= render 'shared/little_search_button', class: "little-search-primary"%>
   </div>
   <% end %>
+  </div>
 </div>
-
 
 <div class="content">
   <div class="cards-container">
