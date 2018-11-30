@@ -59,7 +59,7 @@
         <% if slot.jam.user == current_user %>
         <div class="request-info">
           <% if slot.instrument.name == "Vocals" %>
-            <p>No one is singing at your jam yet. There are <%= slot.requests.size %> pending requests for this slot %></p>
+            <p>No one is singing at your jam yet. There are <%= slot.requests.size %> pending requests for this slot.</p>
           <% else %>
             <p>No one is playing <%= slot.instrument.name %> at your jam yet. There are <%= slot.requests.size %> pending requests for this slot.</p>
           <% end %>
