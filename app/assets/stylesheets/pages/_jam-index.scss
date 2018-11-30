@@ -1,6 +1,11 @@
 .search-bar {
+  background: white;
   text-align: center;
   margin: 15px 150px 15px 190px;
+  border-radius: 4px;
+  padding: 10px;
+  padding-top: 5px;
+  box-shadow: 0 0.7px 2px 0 #B3B3B3;
   .form-control,
   .datepicker
   .flatpickr-input {
@@ -8,6 +13,16 @@
   }
   .ap-input-icon svg {
     top: 50%;
+  }
+}
+.search-inputs {
+  margin-left: 60px;
+  text-align: center;
+  #jam_location {
+    margin-left: 10px;
+  }
+  #instrument {
+    width: 140px;
   }
 }
 .content {
@@ -42,7 +57,7 @@
 }
 
 .search-button {
-  margin-left: -70px;
+  margin-left: -45px;
   padding-top: 3px;
 }
 
