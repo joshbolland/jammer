@@ -2,7 +2,7 @@
   <div id="image-next-to-form" style="background-image: url( <%= image_path 'drums.jpg' %>);">
   </div>
     <div class="instrument-form">
-      <h1><center>Pick an instrument you need for your jam...</center></h1>
+      <h3><center>Pick an instrument you need for your jam...</center></h3>
       <%= simple_form_for [@jam, @slot] do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>

@@ -1,6 +1,7 @@
 .flexbox {
   display: flex;
   padding: 110px;
+  padding-top: 70px;
 }
 
 .flexbox-jams {
@@ -60,7 +61,7 @@
 
 
 #image-next-to-form {
-  width: 65%;
+  width: 58%;
   background-size: cover;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -304,7 +305,7 @@
   color: #484848;
   position: relative;
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 0% 1% 1% 0%;
   box-shadow: 0 1px #fff inset, 0 1px 3px rgba(34,25,25,0.4);
   padding: 35px;
   margin: 20px;
