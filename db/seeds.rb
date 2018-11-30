@@ -93,10 +93,10 @@ assign_instrument(@instruments[4], [5]) # keys
 puts "Seeding jams..."
 db_seed('jam01.yml') { |attributes| create_a_jam(attributes, @users[0]) }
 puts "Assigning slots to #{Jam.last.title}"
-Slot.create!(jam: Jam.last, instrument: @instruments[0])
-Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[2])
-Slot.create!(jam: Jam.last, instrument: @instruments[2])
-Slot.create!(jam: Jam.last, instrument: @instruments[3], user: @users[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[0])
+Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[4])
+Slot.create!(jam: Jam.last, instrument: @instruments[3])
 sleep 5
 puts "DONE!"
 
