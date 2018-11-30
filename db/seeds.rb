@@ -83,8 +83,8 @@ db_seed('instruments.yml') { |attributes| create_a_seed_instrument(attributes) }
 db_seed('users.yml') { |attributes| create_a_seed_user(attributes) }
 
 # Assign instruments to users
-assign_instrument(@instruments[0], [2, 8, 12, 13]) # lead guitar
-assign_instrument(@instruments[1], [0, 11]) # bass guitar
+assign_instrument(@instruments[0], [0, 8, 12, 13]) # lead guitar
+assign_instrument(@instruments[1], [2, 11]) # bass guitar
 assign_instrument(@instruments[2], [3, 4, 7]) # drums
 assign_instrument(@instruments[3], [1, 6, 9, 10, 4, 13]) # vocals
 assign_instrument(@instruments[4], [5]) # keys
@@ -93,15 +93,15 @@ assign_instrument(@instruments[4], [5]) # keys
 puts "Seeding jams..."
 db_seed('jam01.yml') { |attributes| create_a_jam(attributes, @users[0]) }
 puts "Assigning slots to #{Jam.last.title}"
-Slot.create!(jam: Jam.last, instrument: @instruments[0])
-Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[0])
-Slot.create!(jam: Jam.last, instrument: @instruments[2])
-Slot.create!(jam: Jam.last, instrument: @instruments[3], user: @users[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[0])
+Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[4])
+Slot.create!(jam: Jam.last, instrument: @instruments[3])
 sleep 5
 puts "DONE!"
 
 db_seed('jam02.yml') { |attributes| create_a_jam(attributes, @users[10]) }
-Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[0])
 Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[7])
 Slot.create!(jam: Jam.last, instrument: @instruments[3], user: @users[10])
 Slot.create!(jam: Jam.last, instrument: @instruments[4], user: @users[5])
@@ -109,24 +109,24 @@ sleep 5
 puts "DONE!"
 
 db_seed('jam03.yml') { |attributes| create_a_jam(attributes, @users[13]) }
-Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[13])
-Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[0])
+Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[2])
 Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[8])
 Slot.create!(jam: Jam.last, instrument: @instruments[4])
 sleep 5
 puts "DONE!"
 
 db_seed('jam04.yml') { |attributes| create_a_jam(attributes, @users[4]) }
-Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[2])
+Slot.create!(jam: Jam.last, instrument: @instruments[0])
 Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[12])
-Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[2])
 Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[4])
 sleep 5
 puts "DONE!"
 
 db_seed('jam05.yml') { |attributes| create_a_jam(attributes, @users[1]) }
 Slot.create!(jam: Jam.last, instrument: @instruments[0])
-Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[11])
 Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[3])
 Slot.create!(jam: Jam.last, instrument: @instruments[3], user: @users[1])
 # sleep 5
@@ -134,8 +134,8 @@ puts "DONE!"
 
 
 db_seed('jam06.yml') { |attributes| create_a_jam(attributes, @users[12]) }
-Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[12])
-Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[0])
+Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[11])
 Slot.create!(jam: Jam.last, instrument: @instruments[2])
 Slot.create!(jam: Jam.last, instrument: @instruments[3], user: @users[6])
 sleep 5
@@ -152,8 +152,8 @@ puts "DONE!"
 
 
 db_seed('jam08.yml') { |attributes| create_a_jam(attributes, @users[7]) }
-Slot.create!(jam: Jam.last, instrument: @instruments[0], user: @users[13])
-Slot.create!(jam: Jam.last, instrument: @instruments[1])
+Slot.create!(jam: Jam.last, instrument: @instruments[0])
+Slot.create!(jam: Jam.last, instrument: @instruments[1], user: @users[2])
 Slot.create!(jam: Jam.last, instrument: @instruments[2], user: @users[7])
 Slot.create!(jam: Jam.last, instrument: @instruments[3], user: @users[10])
 sleep 5
