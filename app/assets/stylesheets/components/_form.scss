@@ -225,6 +225,14 @@
   border-top: 0 1px 1px -2px solid rgb(226, 226, 226) !important;
 }
 
+#jam_description {
+  resize: none;
+}
+
+#request_message {
+  resize: none;
+}
+
 .fancy-form {
   width: 100%;
   border: none;
