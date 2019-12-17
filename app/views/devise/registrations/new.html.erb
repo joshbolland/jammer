@@ -25,6 +25,8 @@
                 <%= f.input :password_confirmation,
                             required: true,
                             input_html: { autocomplete: "new-password", class: "fancy-form" } %>
+                <%= f.input :photo, input_html: {id: "file-upload"}, label: "Upload Photo", label_html: {for: "file-upload", class: "custom-file-upload"} %>
+                <%= f.input :photo_cache, as: :hidden %>
               </div>
               <div class="form-actions">
                 <%= render 'shared/logup_primary', class: "login_primary" %>
